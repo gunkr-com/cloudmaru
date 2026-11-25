@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-canvas: #0b0c0e;
+  --color-surface-1: #141619;
+  --color-surface-2: #1d2026;
+  --color-diagram-stripe: #191c21;
+  --color-ink: #f4f4f2;
+  --color-body: #dcdee2;
+  --color-muted: #b2b6bd;
+  --color-subtle: #8a8f98;
+  --color-warning: #e8b04b;
+  --color-tier-low: oklch(0.80 0.13 160);
+  --color-tier-balanced: oklch(0.80 0.13 230);
+  --color-tier-ha: oklch(0.80 0.13 60);
+
+  /* 사이드바 활성 항목 배경 */
+  --color-sidebar-active: #17191d;
+  /* 진행 막대 트랙 배경 */
+  --color-progress-track: #22252b;
+  /* 기본 테두리(헤어라인), 섹션 구분선 */
+  --color-hairline: rgba(178, 182, 189, 0.12);
+  /* 입력 칸·텍스트 영역·라디오 테두리. 조작 요소 경계 대비 3:1 이상(3.40~3.58:1) */
+  --color-border-control: rgba(178, 182, 189, 0.55);
+  /* Pro 카드, 표 머리글 아래, 합계 위 강조 테두리 */
+  --color-border-strong: rgba(178, 182, 189, 0.25);
+  /* 표 행 구분선 */
+  --color-border-row: rgba(178, 182, 189, 0.08);
+  /* 추천 안 카드 테두리 */
+  --color-border-recommended: rgba(244, 244, 242, 0.45);
+
+  --font-mono: ui-monospace, Menlo, monospace;
+}
+
+@utility diagram-placeholder {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--color-surface-1) 0 8px,
+    var(--color-diagram-stripe) 8px 16px
+  );
+}
+
+@keyframes progress-indeterminate {
+  from {
+    transform: translateX(-120%);
+  }
+
+  to {
+    transform: translateX(320%);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@utility fade-in {
+  animation: fade-in 0.2s ease-out both;
+}
+
+@utility progress-indeterminate {
+  animation: progress-indeterminate 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-indeterminate {
+    animation: none;
+  }
+
+  .fade-in {
+    animation: none;
+  }
+}
+
+/* shadcn/ui도 동일한 다크 토큰을 사용한다. */
+:root {
+  color-scheme: dark;
+  --background: var(--color-canvas);
+  --foreground: var(--color-body);
+  --card: var(--color-surface-1);
+  --card-foreground: var(--color-body);
+  --popover: var(--color-surface-1);
+  --popover-foreground: var(--color-body);
+  --primary: var(--color-ink);
+  --primary-foreground: var(--color-canvas);
+  --secondary: var(--color-surface-2);
+  --secondary-foreground: var(--color-ink);
+  /*
+   * UI_GUIDE의 muted는 텍스트 색이므로 text-muted를 우선한다.
+   * shadcn 배경 변수 --muted는 surface-1로 연결한다.
+   * 컴포넌트의 배경에는 bg-muted 대신 bg-surface-1 또는 bg-surface-2를 쓴다.
+   */
+  --muted: var(--color-surface-1);
+  --muted-foreground: var(--color-muted);
+  --accent: var(--color-surface-2);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-warning);
+  --destructive-foreground: var(--color-canvas);
+  --border: var(--color-hairline);
+  --input: var(--color-border-control);
+  --ring: var(--color-ink);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --font-sans: var(--font-pretendard), sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-weight: 500;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    text-wrap: pretty;
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
+}

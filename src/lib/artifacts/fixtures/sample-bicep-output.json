@@ -1,0 +1,64 @@
+{
+  "code": "param location string = 'canadacentral'\nparam appName string\nparam storageName string\nparam workspaceName string\nparam insightsName string\nparam vaultName string\n@secure()\nparam administratorPassword string\n\nresource plan 'Microsoft.Web/serverfarms@2023-12-01' = {\n  name: appName\n  location: location\n  kind: 'linux'\n  sku: { name: 'P0v3' }\n  properties: { reserved: true }\n}\nresource app 'Microsoft.Web/sites@2023-12-01' = {\n  name: appName\n  location: location\n  properties: { serverFarmId: plan.id, httpsOnly: true }\n}\nresource postgres 'Microsoft.DBforPostgreSQL/flexibleServers@2024-08-01' = {\n  name: '${appName}-db'\n  location: location\n  properties: { administratorLogin: 'cloudadmin', administratorLoginPassword: administratorPassword, version: '16' }\n}\nresource database 'Microsoft.DBforPostgreSQL/flexibleServers/databases@2024-08-01' = {\n  parent: postgres\n  name: 'reservations'\n  properties: { charset: 'UTF8', collation: 'en_US.utf8' }\n}\nresource storage 'Microsoft.Storage/storageAccounts@2023-05-01' = {\n  name: storageName\n  location: location\n  sku: { name: 'Standard_LRS' }\n  kind: 'StorageV2'\n  properties: { supportsHttpsTrafficOnly: true, minimumTlsVersion: 'TLS1_2' }\n}\nresource blobService 'Microsoft.Storage/storageAccounts/blobServices@2023-05-01' = {\n  parent: storage\n  name: 'default'\n  properties: {}\n}\nresource container 'Microsoft.Storage/storageAccounts/blobServices/containers@2023-05-01' = {\n  parent: blobService\n  name: 'reservations'\n  properties: { publicAccess: 'None' }\n}\nresource workspace 'Microsoft.OperationalInsights/workspaces@2023-09-01' = {\n  name: workspaceName\n  location: location\n  properties: { retentionInDays: 30, sku: { name: 'PerGB2018' } }\n}\nresource insights 'Microsoft.Insights/components@2020-02-02' = {\n  name: insightsName\n  location: location\n  kind: 'web'\n  properties: { Application_Type: 'web' }\n}\nresource vault 'Microsoft.KeyVault/vaults@2023-07-01' = {\n  name: vaultName\n  location: location\n  properties: { tenantId: subscription().tenantId, sku: { family: 'A', name: 'standard' }, accessPolicies: [], enabledForTemplateDeployment: false }\n}\n",
+  "parameters": [
+    {
+      "name": "location",
+      "description": {
+        "en": "Azure resource region.",
+        "ko": "Azure 리소스 지역입니다."
+      }
+    },
+    {
+      "name": "appName",
+      "description": {
+        "en": "Name prefix for the app and database.",
+        "ko": "앱과 데이터베이스에 사용할 이름 접두사입니다."
+      }
+    },
+    {
+      "name": "storageName",
+      "description": {
+        "en": "Globally unique storage account name.",
+        "ko": "전역에서 고유한 저장소 계정 이름입니다."
+      }
+    },
+    {
+      "name": "workspaceName",
+      "description": {
+        "en": "Log Analytics workspace name.",
+        "ko": "Log Analytics 작업 영역 이름입니다."
+      }
+    },
+    {
+      "name": "insightsName",
+      "description": {
+        "en": "Application Insights name.",
+        "ko": "Application Insights 이름입니다."
+      }
+    },
+    {
+      "name": "vaultName",
+      "description": {
+        "en": "Key Vault name.",
+        "ko": "Key Vault 이름입니다."
+      }
+    },
+    {
+      "name": "administratorPassword",
+      "description": {
+        "en": "PostgreSQL administrator password.",
+        "ko": "PostgreSQL 관리자 비밀번호입니다."
+      }
+    }
+  ],
+  "deploymentNotes": [
+    {
+      "en": "Check availability of globally unique names before deployment.",
+      "ko": "전역 고유 이름의 가용성을 배포 전에 확인합니다."
+    },
+    {
+      "en": "Pass the administrator password as a secure parameter and keep it out of source control.",
+      "ko": "관리자 비밀번호는 보안 매개변수로 전달하고 저장소에 기록하지 않습니다."
+    }
+  ]
+}

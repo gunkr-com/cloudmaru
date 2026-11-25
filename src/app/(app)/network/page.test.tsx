@@ -1,0 +1,28 @@
+import { render, screen } from "@testing-library/react";
+import { beforeEach, expect, it, vi } from "vitest";
+import { I18nProvider } from "@/i18n/provider";
+import {createTranslator} from "@/i18n/translate";
+import {completeSnapshot, ids} from "@/lib/completion/fixtures.test-data";
+import Page from "./page";
+const m=vi.hoisted(()=>({current:vi.fn(),list:vi.fn(),source:vi.fn(),history:vi.fn()}));
+vi.mock("@/i18n/server",()=>({getI18n:async()=>({locale:"en",t:createTranslator("en")})}));
+vi.mock("@/services/current-workspace",()=>({getCurrentWorkspace:m.current}));
+vi.mock("@/services/db/scans",()=>({listScans:m.list}));
+vi.mock("@/services/db/network-diagnostics",()=>({getNetworkSourceScan:m.source,listNetworkDiagnostics:m.history}));
+vi.mock("next/navigation",()=>({useRouter:()=>({push:vi.fn()})}));
+beforeEach(()=>{vi.clearAllMocks();m.current.mockResolvedValue({id:ids.workspace});m.list.mockResolvedValue([]);m.history.mockResolvedValue([]);m.source.mockResolvedValue(null);});
+const show=async(searchParams:Record<string,string>={})=>render(<I18nProvider locale="en">{await Page({searchParams:Promise.resolve(searchParams)})}</I18nProvider>);
+it("offers inventory when no usable scan exists without a Claude dependency",async()=>{await show();expect(screen.getByText(/No usable completed scan/)).toBeInTheDocument();expect(screen.getByRole("link",{name:"Go to inventory"})).toHaveAttribute("href","/inventory");expect(screen.queryByRole("button",{name:"Check path"})).toBeNull();});
+it("loads an explicit successful baseline with only resource option fields",async()=>{m.list.mockResolvedValue([completeSnapshot.record]);m.source.mockResolvedValue({scan:completeSnapshot.record,inventory:completeSnapshot.inventory});await show({scan:ids.scan});expect(m.source).toHaveBeenCalledWith(ids.scan);expect(screen.getByLabelText("Source resource")).toBeInTheDocument();expect(screen.getByLabelText("Baseline scan")).toHaveValue(ids.scan);expect(screen.getByRole("button",{name:"Load baseline scan"})).toHaveAttribute("type","submit");});
+it("does not silently substitute another scan for a stale or foreign selection",async()=>{m.list.mockResolvedValue([completeSnapshot.record]);await show({scan:ids.oldScan});expect(screen.getByRole("alert")).toHaveTextContent("source scan could not be found");expect(m.source).not.toHaveBeenCalled();});
+it("reopens saved history in latest first order",async()=>{m.history.mockResolvedValue([{id:ids.network,createdAt:"2026-11-11T12:00:00Z",status:"failed",result:null}]);await show();expect(screen.getByRole("link",{name:/Failed/})).toHaveAttribute("href",`/network/${ids.network}`);});
+it("opens an older source-scoped baseline after more than 100 newer failed scans",async()=>{
+ const newer=Array.from({length:101},()=>({...completeSnapshot.record,id:crypto.randomUUID(),status:"failed",summary:null,errorCode:"internal"}));
+ m.list.mockImplementation(async(_owner:string,{limit}:{limit:number})=>[...newer,completeSnapshot.record].slice(0,limit));
+ m.source.mockResolvedValue({scan:completeSnapshot.record,inventory:completeSnapshot.inventory});
+ await show({scan:ids.scan});
+ expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+ expect(m.source).toHaveBeenCalledWith(ids.scan);
+ expect(screen.getByLabelText("Baseline scan")).toHaveValue(ids.scan);
+ expect(screen.getByLabelText("Source resource")).toBeInTheDocument();
+});

@@ -1,0 +1,1421 @@
+[
+  {
+    "id": "app-service-basic-web-app",
+    "name": {
+      "en": "Basic App Service web application",
+      "ko": "App Service 기본 웹 애플리케이션"
+    },
+    "suitableFor": {
+      "en": "For developers starting a web app or API with a relational database while reducing server management. The basic reference request flow is adapted to PostgreSQL; production options also use the zone-redundant reference and service guides.",
+      "ko": "서버 관리 부담을 줄이고 웹앱·API와 관계형 DB를 함께 시작하려는 개발자에게 적합하다. 기본 참조의 요청 흐름을 PostgreSQL로 적용했으며, 운영 단계는 영역 중복 참조와 서비스 가이드로 보완했다."
+    },
+    "sources": [
+      {
+        "title": "Azure Architecture Center · Basic web application",
+        "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/basic-web-app"
+      },
+      {
+        "title": "Azure Architecture Center · Baseline highly available zone-redundant web application",
+        "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/baseline-zone-redundant"
+      },
+      {
+        "title": "Microsoft Learn · Deploy a Flask web app on Azure App Service with PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-python-postgresql-app-flask"
+      },
+      {
+        "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+      },
+      {
+        "title": "Microsoft Learn · Reliability in Azure App Service",
+        "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-app-service"
+      }
+    ],
+    "tiers": {
+      "low": {
+        "title": {
+          "en": "Start with one app and a small database",
+          "ko": "단일 앱과 소형 DB로 시작"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-b1",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-b1ms",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "app-service-linux-b1"
+          },
+          {
+            "from": "app-service-linux-b1",
+            "to": "postgres-flex-b1ms"
+          }
+        ],
+        "pros": [
+          {
+            "en": "One app instance and a small PostgreSQL database keep initial costs low.",
+            "ko": "앱 1대와 작은 PostgreSQL DB로 구성해 시작 비용을 낮춘다."
+          },
+          {
+            "en": "App Service manages the web server and Log Analytics collects logs.",
+            "ko": "App Service가 웹 서버 운영을 맡고 Log Analytics로 로그를 모은다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "A single app and database can cause downtime during failures and deployments.",
+            "ko": "앱과 DB가 각각 하나이므로 장애와 배포 중 서비스가 중단될 수 있다."
+          },
+          {
+            "en": "B1 does not support autoscaling or deployment slots and suits small validation workloads.",
+            "ko": "B1은 자동 확장과 배포 슬롯을 지원하지 않아 소규모 검증에 적합하다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [],
+          "networkRequirements": [],
+          "appService": {
+            "zoneRedundant": false,
+            "minimumCapacity": 1
+          }
+        }
+      },
+      "balanced": {
+        "title": {
+          "en": "Production setup with autoscaling and deployment slots",
+          "ko": "자동 확장과 배포 슬롯을 갖춘 운영 구성"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-p0v3",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "app-service-linux-p0v3"
+          },
+          {
+            "from": "app-service-linux-p0v3",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "app-service-linux-p0v3",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "P0v3 autoscaling and deployment slots handle load changes and new releases.",
+            "ko": "P0v3의 자동 확장과 배포 슬롯으로 부하 변화와 새 버전 배포에 대응한다."
+          },
+          {
+            "en": "General-purpose PostgreSQL and Key Vault manage production data and secrets.",
+            "ko": "범용 PostgreSQL과 Key Vault로 운영 데이터와 비밀 값을 관리한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "The baseline uses one app instance and one database, without zone failure protection.",
+            "ko": "앱 기본 수량 1대와 단일 DB 기준이며 영역 장애에는 대비하지 않는다."
+          },
+          {
+            "en": "Extra apps added by autoscaling and Blob read/write operations cost extra.",
+            "ko": "자동 확장으로 추가되는 앱과 Blob 읽기·쓰기 작업 비용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [],
+          "networkRequirements": [],
+          "appService": {
+            "zoneRedundant": false,
+            "minimumCapacity": 1
+          }
+        }
+      },
+      "ha": {
+        "title": {
+          "en": "Two app instances and a zone-redundant database",
+          "ko": "앱 2대와 영역 중복 DB 구성"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-p1v3",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 64
+          },
+          {
+            "componentId": "blob-hot-zrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "app-service-linux-p1v3"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "blob-hot-zrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Two zone-redundant P1v3 instances and PostgreSQL primary and standby servers in separate zones prepare for failures.",
+            "ko": "영역 중복을 켠 P1v3 2대와 서로 다른 영역의 PostgreSQL 주·대기 서버로 장애에 대비한다."
+          },
+          {
+            "en": "Files use Blob ZRS; primary and standby database servers each have 32 GB storage.",
+            "ko": "파일은 Blob ZRS에 저장하고 DB 저장소는 주·대기 서버 각각 32GB를 확보한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "Zone redundancy must be enabled in a supported App Service deployment unit; failures require retries and database failover time.",
+            "ko": "지원되는 App Service 배치 환경에서 영역 중복을 켜야 하며 장애 시 재시도와 DB 전환 대기가 필요하다."
+          },
+          {
+            "en": "Redundant resources incur ongoing charges; autoscaling and Blob operations cost extra.",
+            "ko": "중복 자원의 상시 비용이 발생하고 자동 확장·Blob 작업 비용은 추가된다."
+          },
+          {
+            "en": "This is not a multi-region setup for a full regional outage.",
+            "ko": "지역 전체 장애에 대비하는 다중 지역 구성은 아니다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "ZoneRedundant",
+            "billingInstancesPerRoot": 2
+          },
+          "bindings": [],
+          "networkRequirements": [],
+          "appService": {
+            "zoneRedundant": true,
+            "minimumCapacity": 2
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "app-service-zone-redundant",
+    "name": {
+      "en": "Zone-redundant App Service web application",
+      "ko": "App Service 영역 중복 고가용성 웹 애플리케이션"
+    },
+    "suitableFor": {
+      "en": "For web services that separate the entry point and gradually prepare for zone failures. The official gateway, app, and database flow is adapted to PostgreSQL and Standard v2. Web attack filtering and private connectivity are excluded; full zone redundancy is configured in the high availability option.",
+      "ko": "진입점을 분리하고 단계적으로 영역 장애에 대비하려는 웹 서비스에 적합하다. 공식 참조의 게이트웨이·앱·DB 흐름을 PostgreSQL과 Standard v2로 축소 적용했다. 원문의 웹 공격 필터링과 사설 연결은 포함하지 않으며, 전체 영역 중복은 고가용성 단계에서 구성한다."
+    },
+    "sources": [
+      {
+        "title": "Azure Architecture Center · Baseline highly available zone-redundant web application",
+        "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/baseline-zone-redundant"
+      },
+      {
+        "title": "Microsoft Learn · Deploy a Flask web app on Azure App Service with PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-python-postgresql-app-flask"
+      },
+      {
+        "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+      },
+      {
+        "title": "Microsoft Learn · Reliability in Azure App Service",
+        "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-app-service"
+      },
+      {
+        "title": "Microsoft Learn · Understanding Pricing for Azure Application Gateway and Web Application Firewall",
+        "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+      },
+      {
+        "title": "Microsoft Learn · Manage a public IP address with an Azure Application Gateway",
+        "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/configure-public-ip-application-gateway"
+      }
+    ],
+    "tiers": {
+      "low": {
+        "title": {
+          "en": "Validate the setup with a gateway and one app",
+          "ko": "게이트웨이와 단일 앱으로 구조 검증"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-p0v3",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-b1ms",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "application-gateway-v2-fixed",
+            "quantity": 1
+          },
+          {
+            "componentId": "application-gateway-v2-capacity",
+            "quantity": 10
+          },
+          {
+            "componentId": "public-ipv4-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "public-ipv4-standard"
+          },
+          {
+            "from": "public-ipv4-standard",
+            "to": "application-gateway-v2-fixed"
+          },
+          {
+            "from": "application-gateway-v2-fixed",
+            "to": "app-service-linux-p0v3"
+          },
+          {
+            "from": "app-service-linux-p0v3",
+            "to": "postgres-flex-b1ms"
+          },
+          {
+            "from": "app-service-linux-p0v3",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Application Gateway provides a single entry point and forwards requests to the web app.",
+            "ko": "Application Gateway를 단일 진입점으로 두고 웹앱으로 요청을 전달한다."
+          },
+          {
+            "en": "Deployment slots and Key Vault prepare for deployments and secret management.",
+            "ko": "배포 슬롯과 Key Vault를 이용해 배포와 비밀 값 관리를 준비한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "One app and one database do not provide zone-redundant high availability.",
+            "ko": "앱·DB가 각각 하나여서 영역 중복 고가용성은 제공하지 않는다."
+          },
+          {
+            "en": "The gateway incurs ongoing charges for at least one instance, 10 capacity units, and a public IP.",
+            "ko": "게이트웨이 최소 1개 인스턴스의 10개 용량 단위와 공인 IP 상시 요금이 든다."
+          },
+          {
+            "en": "This reduced setup excludes web attack filtering, private connectivity, and Blob read/write charges.",
+            "ko": "웹 공격 필터링·사설 연결과 Blob 읽기·쓰기 비용은 포함하지 않은 축소 구성이다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [
+            {
+              "role": "gateway-public-ip",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "public-ipv4-standard"
+            },
+            {
+              "role": "gateway-backend",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "app-service-linux-p0v3"
+            }
+          ],
+          "networkRequirements": [
+            {
+              "role": "gateway-subnet",
+              "componentId": "application-gateway-v2-fixed",
+              "maximumPrefixLength": 24,
+              "delegation": "none"
+            }
+          ],
+          "appService": {
+            "zoneRedundant": false,
+            "minimumCapacity": 1
+          },
+          "applicationGateway": {
+            "minimumCapacity": 1,
+            "zoneRedundant": false,
+            "zonesBasis": "none"
+          },
+          "publicIp": {
+            "zoneRedundant": false,
+            "zonesBasis": "none"
+          }
+        }
+      },
+      "balanced": {
+        "title": {
+          "en": "Production setup with two apps and autoscaling",
+          "ko": "앱 이중화와 자동 확장을 갖춘 운영 구성"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-p1v3",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "application-gateway-v2-fixed",
+            "quantity": 1
+          },
+          {
+            "componentId": "application-gateway-v2-capacity",
+            "quantity": 20
+          },
+          {
+            "componentId": "public-ipv4-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "public-ipv4-standard"
+          },
+          {
+            "from": "public-ipv4-standard",
+            "to": "application-gateway-v2-fixed"
+          },
+          {
+            "from": "application-gateway-v2-fixed",
+            "to": "app-service-linux-p1v3"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Two P1v3 app instances and deployment slots reduce the impact of a single app failure and deployments.",
+            "ko": "P1v3 앱 2대와 배포 슬롯으로 단일 앱 장애와 배포의 영향을 줄인다."
+          },
+          {
+            "en": "The gateway uses at least two instances and 20 capacity units, with autoscaling configured.",
+            "ko": "게이트웨이 최소 2개 인스턴스와 20개 용량 단위를 확보하고 자동 확장을 설정한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "The database and file storage are not zone redundant, limiting protection for the whole service.",
+            "ko": "DB와 파일 저장소가 영역 중복이 아니므로 전체 서비스의 영역 장애 대응은 제한된다."
+          },
+          {
+            "en": "Web attack filtering and private connectivity are excluded, so app access restrictions need separate configuration.",
+            "ko": "웹 공격 필터링과 사설 연결을 포함하지 않아 앱 접근 제한을 별도로 설정해야 한다."
+          },
+          {
+            "en": "Additional scaling capacity and Blob read/write operations add usage charges.",
+            "ko": "추가 확장 용량과 Blob 읽기·쓰기 작업은 사용량에 따라 비용이 늘어난다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [
+            {
+              "role": "gateway-public-ip",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "public-ipv4-standard"
+            },
+            {
+              "role": "gateway-backend",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "app-service-linux-p1v3"
+            }
+          ],
+          "networkRequirements": [
+            {
+              "role": "gateway-subnet",
+              "componentId": "application-gateway-v2-fixed",
+              "maximumPrefixLength": 24,
+              "delegation": "none"
+            }
+          ],
+          "appService": {
+            "zoneRedundant": true,
+            "minimumCapacity": 2
+          },
+          "applicationGateway": {
+            "minimumCapacity": 2,
+            "zoneRedundant": false,
+            "zonesBasis": "none"
+          },
+          "publicIp": {
+            "zoneRedundant": false,
+            "zonesBasis": "none"
+          }
+        }
+      },
+      "ha": {
+        "title": {
+          "en": "Distribute the entry point, apps, and database across zones",
+          "ko": "진입점·앱·DB를 가용 영역에 분산"
+        },
+        "items": [
+          {
+            "componentId": "app-service-linux-p1v3",
+            "quantity": 3
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 64
+          },
+          {
+            "componentId": "blob-hot-zrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "application-gateway-v2-fixed",
+            "quantity": 1
+          },
+          {
+            "componentId": "application-gateway-v2-capacity",
+            "quantity": 30
+          },
+          {
+            "componentId": "public-ipv4-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "public-ipv4-standard"
+          },
+          {
+            "from": "public-ipv4-standard",
+            "to": "application-gateway-v2-fixed"
+          },
+          {
+            "from": "application-gateway-v2-fixed",
+            "to": "app-service-linux-p1v3"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "app-service-linux-p1v3",
+            "to": "blob-hot-zrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "At least three gateway instances and three P1v3 apps are distributed across zones; the public IP is also zone redundant.",
+            "ko": "게이트웨이 최소 3개 인스턴스와 P1v3 앱 3대를 영역에 분산하고 공인 IP도 영역 중복으로 설정한다."
+          },
+          {
+            "en": "PostgreSQL primary and standby servers, each with 32 GB storage, and Blob ZRS provide data redundancy.",
+            "ko": "PostgreSQL 주·대기 서버와 각 32GB 저장소, Blob ZRS로 데이터 계층을 중복 구성한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "The gateway incurs ongoing charges for 30 capacity units and redundant resources; extra scaling and Blob operations cost extra.",
+            "ko": "게이트웨이 30개 용량 단위와 중복 자원의 상시 요금이 들며 추가 확장·Blob 작업은 별도다."
+          },
+          {
+            "en": "Zone redundancy must be explicitly enabled and requests retried on failure; full regional outages are not covered.",
+            "ko": "영역 중복을 명시적으로 켜고 장애 시 재시도해야 하며, 지역 전체 장애에는 대응하지 않는다."
+          },
+          {
+            "en": "This is not the full security baseline from the official reference with web attack filtering and private connectivity.",
+            "ko": "공식 참조의 웹 공격 필터링과 사설 연결까지 구현한 보안 기준 구성은 아니다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "ZoneRedundant",
+            "billingInstancesPerRoot": 2
+          },
+          "bindings": [
+            {
+              "role": "gateway-public-ip",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "public-ipv4-standard"
+            },
+            {
+              "role": "gateway-backend",
+              "fromComponentId": "application-gateway-v2-fixed",
+              "toComponentId": "app-service-linux-p1v3"
+            }
+          ],
+          "networkRequirements": [
+            {
+              "role": "gateway-subnet",
+              "componentId": "application-gateway-v2-fixed",
+              "maximumPrefixLength": 24,
+              "delegation": "none"
+            }
+          ],
+          "appService": {
+            "zoneRedundant": true,
+            "minimumCapacity": 3
+          },
+          "applicationGateway": {
+            "minimumCapacity": 3,
+            "zoneRedundant": true,
+            "zonesBasis": "deployment-input"
+          },
+          "publicIp": {
+            "zoneRedundant": true,
+            "zonesBasis": "deployment-input"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "container-apps-web-api",
+    "name": {
+      "en": "Container Apps web app and API",
+      "ko": "Container Apps 기반 웹앱·API"
+    },
+    "suitableFor": {
+      "en": "For teams running container web apps and HTTP APIs without server management. The reference entry point and external storage approach are reduced to one web app or API with PostgreSQL; asynchronous processing is excluded. A deployable container image is assumed to be ready.",
+      "ko": "컨테이너로 만든 웹앱·HTTP API를 서버 관리 없이 실행하려는 팀에 적합하다. 참조 예제의 기본 진입점·외부 데이터 저장 방식을 단일 웹앱·API와 PostgreSQL로 축소했으며 비동기 업무 처리 기능은 제외했다. 배포할 컨테이너 이미지는 이미 준비되어 있다고 가정한다."
+    },
+    "sources": [
+      {
+        "title": "Azure Architecture Center · Deploy microservices with Azure Container Apps and Dapr",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/serverless/microservices-with-container-apps-dapr"
+      },
+      {
+        "title": "Azure Well-Architected Framework · Architecture best practices for Azure Container Apps",
+        "url": "https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-container-apps"
+      },
+      {
+        "title": "Microsoft Learn · Reliability in Azure Container Apps",
+        "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-container-apps"
+      },
+      {
+        "title": "Microsoft Learn · Billing in Azure Container Apps",
+        "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+      },
+      {
+        "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+      }
+    ],
+    "tiers": {
+      "low": {
+        "title": {
+          "en": "Start with one small container and a small database",
+          "ko": "작은 컨테이너 1개와 소형 DB로 시작"
+        },
+        "items": [
+          {
+            "componentId": "container-apps-vcpu",
+            "quantity": 0.25
+          },
+          {
+            "componentId": "container-apps-memory",
+            "quantity": 0.5
+          },
+          {
+            "componentId": "container-apps-requests",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-b1ms",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "container-apps-vcpu"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "postgres-flex-b1ms"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Built-in ingress receives requests and runs the container web app without a separate gateway.",
+            "ko": "기본 진입점이 요청을 받아 별도 게이트웨이 없이 컨테이너 웹앱을 실행한다."
+          },
+          {
+            "en": "Start with one 0.25 vCPU, 0.5 GiB replica and configure request-based autoscaling.",
+            "ko": "0.25 vCPU·0.5GiB 복제본 1개로 시작하고 요청량에 따른 자동 확장을 설정할 수 있다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "The estimate assumes 730 hours of active execution per month, without idle discounts or the shared free compute allowance.",
+            "ko": "견적은 월 730시간 활성 실행 기준이며, 유휴 할인과 공유 무료 컴퓨트 사용량은 차감하지 않는다."
+          },
+          {
+            "en": "A single app and database may cause downtime on failure; Blob operations and image storage cost extra.",
+            "ko": "앱과 DB가 각각 하나라 장애 시 중단될 수 있고 Blob 작업 및 이미지 보관 비용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [],
+          "networkRequirements": [],
+          "containerApps": {
+            "zoneRedundant": false,
+            "minimumReplicas": 1,
+            "subnetRequired": false
+          }
+        }
+      },
+      "balanced": {
+        "title": {
+          "en": "Two replicas with traffic split between revisions",
+          "ko": "복제본 2개와 버전별 트래픽 분배"
+        },
+        "items": [
+          {
+            "componentId": "container-apps-vcpu",
+            "quantity": 0.5
+          },
+          {
+            "componentId": "container-apps-memory",
+            "quantity": 1.0
+          },
+          {
+            "componentId": "container-apps-requests",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "container-apps-vcpu"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Keep two replicas of 0.25 vCPU and 0.5 GiB each, splitting requests when deploying a new revision.",
+            "ko": "각 0.25 vCPU·0.5GiB 복제본 2개를 유지하고 새 버전에 요청을 나누어 배포한다."
+          },
+          {
+            "en": "Use general-purpose PostgreSQL, Key Vault, and collected logs to monitor operations.",
+            "ko": "범용 PostgreSQL과 Key Vault를 사용하며 로그를 모아 운영 상태를 확인한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "More app replicas do not protect a single database and locally redundant file storage from zone failure.",
+            "ko": "앱 복제본을 늘려도 단일 DB와 로컬 중복 파일 저장소는 영역 장애에 취약하다."
+          },
+          {
+            "en": "The estimate assumes 730 active hours per month; extra replicas, Blob operations, and image storage cost extra.",
+            "ko": "월 730시간 활성 실행 기준이며 추가 복제본·Blob 작업·이미지 보관 비용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [],
+          "networkRequirements": [],
+          "containerApps": {
+            "zoneRedundant": false,
+            "minimumReplicas": 2,
+            "subnetRequired": false
+          }
+        }
+      },
+      "ha": {
+        "title": {
+          "en": "Three replicas and zone-redundant data storage",
+          "ko": "복제본 3개와 데이터 계층의 영역 중복"
+        },
+        "items": [
+          {
+            "componentId": "container-apps-vcpu",
+            "quantity": 0.75
+          },
+          {
+            "componentId": "container-apps-memory",
+            "quantity": 1.5
+          },
+          {
+            "componentId": "container-apps-requests",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 64
+          },
+          {
+            "componentId": "blob-hot-zrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "container-apps-vcpu"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "container-apps-vcpu",
+            "to": "blob-hot-zrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Distribute three replicas of 0.25 vCPU and 0.5 GiB each in a zone-redundant environment and maintain the minimum replica count.",
+            "ko": "영역 중복 환경에서 각 0.25 vCPU·0.5GiB 복제본 3개를 분산하고 최소 복제본을 유지한다."
+          },
+          {
+            "en": "PostgreSQL primary and standby servers each have 32 GB storage; Blob ZRS provides redundant persistent storage.",
+            "ko": "PostgreSQL 주·대기 서버의 각 32GB 저장소와 Blob ZRS로 영구 데이터를 중복 보관한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "Zone redundancy must be configured when creating the environment; failures require request retries and database failover time.",
+            "ko": "영역 중복은 환경 생성 시 설정해야 하며, 장애 시 요청 재시도와 DB 전환 대기가 필요하다."
+          },
+          {
+            "en": "The estimate assumes 730 active hours per month; extra scaling, Blob operations, and image storage cost extra.",
+            "ko": "월 730시간 활성 실행 기준이고 추가 확장·Blob 작업·이미지 보관 비용은 별도다."
+          },
+          {
+            "en": "A full regional outage is not covered.",
+            "ko": "지역 전체 장애에 대응하는 구성은 아니다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "ZoneRedundant",
+            "billingInstancesPerRoot": 2
+          },
+          "bindings": [],
+          "networkRequirements": [
+            {
+              "role": "container-environment-subnet",
+              "componentId": "container-apps-vcpu",
+              "maximumPrefixLength": 27,
+              "delegation": "Microsoft.App/environments"
+            }
+          ],
+          "containerApps": {
+            "zoneRedundant": true,
+            "minimumReplicas": 3,
+            "subnetRequired": true
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "serverless-static-web-app",
+    "name": {
+      "en": "Serverless web application (Static Web Apps + Functions)",
+      "ko": "서버리스 웹 애플리케이션 (Static Web Apps + Functions)"
+    },
+    "suitableFor": {
+      "en": "For web services with static pages, short HTTP APIs, and PostgreSQL. The former serverless reference moved, so this setup combines the Architecture Center static content hosting pattern with official Static Web Apps and Functions guides. Standard enables a separate API in the selected region; the high availability option uses a dedicated API plan instead of consumption.",
+      "ko": "정적 화면과 짧은 HTTP API, PostgreSQL DB로 구성한 웹 서비스에 적합하다. 기존 서버리스 참조 문서가 이동하여 Architecture Center의 정적 콘텐츠 호스팅 패턴을 Static Web Apps·Functions 공식 가이드와 조합한 구성이다. 선택한 지역의 별도 API 연결을 위해 Standard를 사용하며, 고가용성 단계의 API는 소비형 대신 전용 계획으로 실행한다."
+    },
+    "sources": [
+      {
+        "title": "Azure Architecture Center · Static Content Hosting pattern",
+        "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/static-content-hosting"
+      },
+      {
+        "title": "Microsoft Learn · What is Azure Static Web Apps?",
+        "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/overview"
+      },
+      {
+        "title": "Microsoft Learn · Overview of API support in Azure Static Web Apps",
+        "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/apis-overview"
+      },
+      {
+        "title": "Microsoft Learn · API support in Azure Static Web Apps with Azure Functions",
+        "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/apis-functions"
+      },
+      {
+        "title": "Microsoft Learn · Reliability in Azure Functions",
+        "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-functions"
+      },
+      {
+        "title": "Microsoft Learn · Dedicated hosting plans for Azure Functions",
+        "url": "https://learn.microsoft.com/en-us/azure/azure-functions/dedicated-plan"
+      },
+      {
+        "title": "Microsoft Learn · Reliability in Azure App Service",
+        "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-app-service"
+      },
+      {
+        "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+        "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+      }
+    ],
+    "tiers": {
+      "low": {
+        "title": {
+          "en": "Start with static pages and a consumption API",
+          "ko": "정적 화면과 소비형 API로 시작"
+        },
+        "items": [
+          {
+            "componentId": "static-web-apps-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "functions-consumption-executions",
+            "quantity": 1000000
+          },
+          {
+            "componentId": "functions-consumption-duration",
+            "quantity": 200000
+          },
+          {
+            "componentId": "postgres-flex-b1ms",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "static-web-apps-standard"
+          },
+          {
+            "from": "static-web-apps-standard",
+            "to": "functions-consumption-executions"
+          },
+          {
+            "from": "functions-consumption-executions",
+            "to": "postgres-flex-b1ms"
+          },
+          {
+            "from": "functions-consumption-executions",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Deploy static pages globally and run the API on consumption Functions in the selected region.",
+            "ko": "정적 화면을 전역 배포하고 선택한 지역의 소비형 Functions에 API 실행을 맡긴다."
+          },
+          {
+            "en": "Start with API usage and a small PostgreSQL database without reserving an always-on app server.",
+            "ko": "앱 서버를 상시 확보하지 않고 API 실행량과 작은 PostgreSQL DB를 기준으로 시작한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "Consumption Functions and a single database do not protect against zone failure; the first request after idle may be slow.",
+            "ko": "소비형 Functions와 단일 DB는 영역 장애에 대비하지 않으며, 유휴 후 첫 요청이 느려질 수 있다."
+          },
+          {
+            "en": "The database and Static Web Apps Standard incur ongoing charges; the separate API must be deployed directly.",
+            "ko": "DB 상시 요금과 정적 앱 Standard 요금이 발생하고 별도 API를 직접 배포해야 한다."
+          },
+          {
+            "en": "Assumes transfers within the static app allowance and separate API internet egress; storage operations and excess usage cost extra.",
+            "ko": "정적 앱 기본 제공량 안의 전송과 별도 API 인터넷 송신을 가정하며 저장소 읽기·쓰기와 초과 사용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [
+            {
+              "role": "static-backend",
+              "fromComponentId": "static-web-apps-standard",
+              "toComponentId": "functions-consumption-executions"
+            },
+            {
+              "role": "function-storage",
+              "fromComponentId": "functions-consumption-executions",
+              "toComponentId": "blob-hot-lrs"
+            }
+          ],
+          "networkRequirements": [],
+          "functions": {
+            "hosting": "Consumption",
+            "zoneRedundant": false,
+            "minimumCapacity": 1
+          }
+        }
+      },
+      "balanced": {
+        "title": {
+          "en": "Production setup with an autoscaling API and general-purpose database",
+          "ko": "자동 확장 API와 범용 DB의 운영 구성"
+        },
+        "items": [
+          {
+            "componentId": "static-web-apps-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "functions-consumption-executions",
+            "quantity": 1000000
+          },
+          {
+            "componentId": "functions-consumption-duration",
+            "quantity": 200000
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 1
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 32
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "static-web-apps-standard"
+          },
+          {
+            "from": "static-web-apps-standard",
+            "to": "functions-consumption-executions"
+          },
+          {
+            "from": "functions-consumption-executions",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "functions-consumption-executions",
+            "to": "blob-hot-lrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Static Web Apps deploys static pages; consumption Functions scales the API with requests.",
+            "ko": "Static Web Apps에서 정적 화면을 배포하고 소비형 Functions가 요청량에 따라 API를 확장한다."
+          },
+          {
+            "en": "General-purpose PostgreSQL and Key Vault manage production data and API secrets.",
+            "ko": "범용 PostgreSQL과 Key Vault를 사용해 운영 데이터와 API의 비밀 값을 관리한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "A consumption API and single database do not withstand zone failures; the first request after idle may be slow.",
+            "ko": "소비형 API와 단일 DB는 영역 장애를 견디는 구성이 아니며, 유휴 후 첫 요청이 느려질 수 있다."
+          },
+          {
+            "en": "The linked API cannot connect to static app preview environments and needs separate deployment and validation.",
+            "ko": "연결한 별도 API는 정적 앱의 미리보기 환경에 연결할 수 없어 별도 배포·검증이 필요하다."
+          },
+          {
+            "en": "Assumes transfers within the Static Web Apps allowance and separate API egress; storage operations and excess usage cost extra.",
+            "ko": "Static Web Apps 기본 제공량 안의 전송과 별도 API의 인터넷 송신을 가정하며 저장소 작업·초과 사용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "Disabled",
+            "billingInstancesPerRoot": 1
+          },
+          "bindings": [
+            {
+              "role": "static-backend",
+              "fromComponentId": "static-web-apps-standard",
+              "toComponentId": "functions-consumption-executions"
+            },
+            {
+              "role": "function-storage",
+              "fromComponentId": "functions-consumption-executions",
+              "toComponentId": "blob-hot-lrs"
+            }
+          ],
+          "networkRequirements": [],
+          "functions": {
+            "hosting": "Consumption",
+            "zoneRedundant": false,
+            "minimumCapacity": 1
+          }
+        }
+      },
+      "ha": {
+        "title": {
+          "en": "Static web app with zone-redundant Functions and database",
+          "ko": "영역 중복 Functions와 DB를 갖춘 정적 웹앱"
+        },
+        "items": [
+          {
+            "componentId": "static-web-apps-standard",
+            "quantity": 1
+          },
+          {
+            "componentId": "functions-dedicated-p1v3",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "quantity": 2
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "quantity": 64
+          },
+          {
+            "componentId": "blob-hot-zrs",
+            "quantity": 50
+          },
+          {
+            "componentId": "internet-egress",
+            "quantity": 100
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "quantity": 10
+          },
+          {
+            "componentId": "key-vault-operations",
+            "quantity": 10
+          }
+        ],
+        "connections": [
+          {
+            "from": "user",
+            "to": "static-web-apps-standard"
+          },
+          {
+            "from": "static-web-apps-standard",
+            "to": "functions-dedicated-p1v3"
+          },
+          {
+            "from": "functions-dedicated-p1v3",
+            "to": "postgres-flex-gp-2vcore"
+          },
+          {
+            "from": "functions-dedicated-p1v3",
+            "to": "blob-hot-zrs"
+          }
+        ],
+        "pros": [
+          {
+            "en": "Connect globally deployed static pages to two zone-redundant dedicated P1v3 Functions instances and enable Always On.",
+            "ko": "전역 배포되는 정적 화면에 영역 중복 Functions 전용 P1v3 계획 2대를 연결하고 Always On을 켠다."
+          },
+          {
+            "en": "PostgreSQL primary and standby servers each have 32 GB storage; Blob ZRS stores function host data and files redundantly.",
+            "ko": "PostgreSQL 주·대기 서버 각각 32GB와 함수 호스트·파일용 Blob ZRS를 사용해 데이터 계층도 중복 구성한다."
+          }
+        ],
+        "cons": [
+          {
+            "en": "The API switches to ongoing dedicated plan charges even when idle. Consumption execution charges are not counted again.",
+            "ko": "API가 전용 계획의 상시 요금으로 바뀌며 사용하지 않아도 비용이 든다. 소비형 실행 요금은 중복 산정하지 않는다."
+          },
+          {
+            "en": "Enable zone redundancy in a supported deployment unit; retries and database failover time are required, and full regional outages are not covered.",
+            "ko": "영역 중복 지원 배치 환경에서 설정을 켜야 하며, 요청 재시도·DB 전환 대기가 필요하고 지역 전체 장애는 보호하지 않는다."
+          },
+          {
+            "en": "A separate API deployment is required; storage operations, transfers beyond the static allowance, and extra instances cost extra.",
+            "ko": "별도 API 배포가 필요하며, 저장소 작업·정적 전송 기본 제공량 초과·추가 인스턴스 비용은 별도다."
+          }
+        ],
+        "deploymentIntent": {
+          "version": "extension-topology-v1",
+          "capabilityStatus": "unverified",
+          "postgres": {
+            "highAvailabilityMode": "ZoneRedundant",
+            "billingInstancesPerRoot": 2
+          },
+          "bindings": [
+            {
+              "role": "static-backend",
+              "fromComponentId": "static-web-apps-standard",
+              "toComponentId": "functions-dedicated-p1v3"
+            },
+            {
+              "role": "function-storage",
+              "fromComponentId": "functions-dedicated-p1v3",
+              "toComponentId": "blob-hot-zrs"
+            }
+          ],
+          "networkRequirements": [],
+          "functions": {
+            "hosting": "Dedicated",
+            "zoneRedundant": true,
+            "minimumCapacity": 2
+          }
+        }
+      }
+    }
+  }
+]

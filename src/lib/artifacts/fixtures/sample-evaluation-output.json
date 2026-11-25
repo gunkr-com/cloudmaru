@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "en": "A single app and managed database make it easy to start; verify recovery and load handling before production.",
+    "ko": "단일 앱과 관리형 데이터베이스로 시작하기 쉬우며, 운영 전 복구와 부하 검증이 필요합니다."
+  },
+  "reliability": {
+    "grade": "medium",
+    "rationale": {
+      "en": "Managed services are used, but there is only one app instance.",
+      "ko": "관리형 서비스지만 앱 인스턴스는 하나입니다."
+    },
+    "improvement": {
+      "en": "Check app instance redundancy and database recovery procedures.",
+      "ko": "앱 인스턴스 중복과 데이터베이스 복구 절차를 확인합니다."
+    }
+  },
+  "security": {
+    "grade": "medium",
+    "rationale": {
+      "en": "Key Vault can store secrets.",
+      "ko": "Key Vault에 비밀 값을 보관할 수 있습니다."
+    },
+    "improvement": {
+      "en": "Apply managed identities and least privilege network rules.",
+      "ko": "관리 ID와 최소 권한 네트워크 규칙을 적용합니다."
+    }
+  },
+  "cost": {
+    "grade": "high",
+    "rationale": {
+      "en": "The scope is limited to managed services needed for a small start.",
+      "ko": "소규모 시작에 필요한 관리형 구성으로 범위를 제한합니다."
+    },
+    "improvement": {
+      "en": "Review log retention and storage volume regularly.",
+      "ko": "로그 보존 기간과 저장량을 주기적으로 검토합니다."
+    }
+  },
+  "operations": {
+    "grade": "medium",
+    "rationale": {
+      "en": "Central logs and application monitoring tools are available.",
+      "ko": "중앙 로그와 앱 관측 도구를 사용할 수 있습니다."
+    },
+    "improvement": {
+      "en": "Define alert thresholds and deployment slot switching procedures.",
+      "ko": "경보 기준과 배포 슬롯 전환 절차를 마련합니다."
+    }
+  },
+  "performance": {
+    "grade": "medium",
+    "rationale": {
+      "en": "App and database sizes can be adjusted with load.",
+      "ko": "앱과 데이터베이스 크기는 부하에 따라 조정할 수 있습니다."
+    },
+    "improvement": {
+      "en": "Find bottlenecks by load testing peak reservation periods.",
+      "ko": "예약 집중 시간대의 부하 시험으로 병목을 찾습니다."
+    }
+  }
+}

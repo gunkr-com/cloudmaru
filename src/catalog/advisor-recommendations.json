@@ -1,0 +1,140 @@
+{
+  "schemaVersion": 1,
+  "version": "advisor-cost-v1-2026-11-11",
+  "verifiedAt": "2026-11-11",
+  "entries": [
+    {
+      "recommendationTypeId": "39a8510f-5bbf-4304-9bcd-4106c996473b",
+      "ruleId": "advisor-empty-app-service-plan",
+      "actionId": "advisor-action-empty-app-service-plan",
+      "resourceTypes": [
+        "microsoft.web/sites"
+      ],
+      "title": {
+        "en": "Review empty App Service plans (Advisor preview)",
+        "ko": "App Service 플랜 비어 있음 권장 사항 검토 (Advisor 미리 보기)"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "cc9d34f5-f9b8-4d4f-9de7-98b45c698a49",
+      "ruleId": "advisor-app-service-sizing",
+      "actionId": "advisor-action-app-service-sizing",
+      "resourceTypes": [
+        "microsoft.web/sites"
+      ],
+      "title": {
+        "en": "Review App Service sizing using Advisor observations",
+        "ko": "Advisor 관측에 따른 App Service 크기 검토"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "cdf51428-a41b-4735-ba23-39f3b7cde20c",
+      "ruleId": "advisor-cosmos-autoscale",
+      "actionId": "advisor-action-cosmos-autoscale",
+      "resourceTypes": [
+        "microsoft.documentdb/databaseaccounts"
+      ],
+      "title": {
+        "en": "Review Cosmos DB autoscale recommendations from Advisor",
+        "ko": "Advisor의 Cosmos DB 자동 크기 조정 권장 사항 검토"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "3dfe0963-0fe5-49e0-aaaa-593b6fd4308e",
+      "ruleId": "advisor-log-ingestion",
+      "actionId": "advisor-action-log-ingestion",
+      "resourceTypes": [
+        "microsoft.operationalinsights/workspaces"
+      ],
+      "title": {
+        "en": "Review Log Analytics ingestion anomalies reported by Advisor",
+        "ko": "Advisor가 보고한 Log Analytics 수집 이상 검토"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "afdf4c1a-e46b-4817-a5d6-4b9909f58e2a",
+      "ruleId": "advisor-synapse-auto-pause",
+      "actionId": "advisor-action-synapse-auto-pause",
+      "resourceTypes": [
+        "microsoft.synapse/workspaces"
+      ],
+      "title": {
+        "en": "Review Synapse Spark auto-pause recommendations from Advisor",
+        "ko": "Advisor의 Synapse Spark 자동 일시 중지 권장 사항 검토"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "e10b1381-5f0a-47ff-8c7b-37bd13d7c974",
+      "ruleId": "advisor-vm-sizing",
+      "actionId": "advisor-action-vm-sizing",
+      "resourceTypes": [
+        "microsoft.compute/virtualmachines"
+      ],
+      "title": {
+        "en": "Review VM size or shutdown recommendations from Advisor",
+        "ko": "Advisor의 VM 크기 또는 종료 권장 사항 검토"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    },
+    {
+      "recommendationTypeId": "48eda464-1485-4dcf-a674-d0905df5054a",
+      "ruleId": "advisor-unattached-disk",
+      "actionId": "advisor-action-unattached-disk",
+      "resourceTypes": [
+        "microsoft.compute/disks"
+      ],
+      "title": {
+        "en": "Review unattached disk recommendations (Advisor preview)",
+        "ko": "연결되지 않은 디스크 권장 사항 검토 (Advisor 미리 보기)"
+      },
+      "description": {
+        "en": "Advisor cached recommendation. Independently verify usage and suitability before making changes; this is not a local scan verdict or a verified saving.",
+        "ko": "Advisor의 캐시된 권장 사항입니다. 변경 전 사용량과 적합성을 별도로 확인하십시오. 로컬 스캔 판정이나 검증된 절감액이 아닙니다."
+      },
+      "sources": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-reference-cost-recommendations"
+      ]
+    }
+  ]
+}

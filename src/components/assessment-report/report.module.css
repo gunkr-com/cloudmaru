@@ -1,0 +1,23 @@
+.report {
+  max-width: 70rem;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.printSource { display: none; }
+@media print {
+  @page { margin: 16mm; }
+  :global(body):has(.report) { background: var(--color-canvas); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  :global(body):has(.report) :global(aside),
+  :global(body):has(.report) :global(nav),
+  :global(body):has(.report) :global(header):not(.report > header),
+  :global(body):has(.report) :global(a[href='#main']) { display: none !important; }
+  :global(body):has(.report) :global(.lg\:grid) { display: block !important; }
+  :global(body):has(.report) :global(main) { margin: 0; padding: 0; }
+  .controls { display: none; }
+  .printSource { display: inline; font-size: 10pt; overflow-wrap: anywhere; }
+  .report { max-width: none; font-size: 11pt; }
+  .report h1, .report h2, .report h3 { break-after: avoid-page; }
+  .report p { orphans: 3; widows: 3; }
+  .report pre { white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-all; break-inside: auto; }
+  .report section { break-inside: auto; }
+}

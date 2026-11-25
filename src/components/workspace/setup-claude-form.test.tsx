@@ -1,0 +1,24 @@
+import { expect, it, vi } from "vitest";
+import { screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { renderWithI18n } from "@/test/render-with-i18n";
+import { SetupClaudeForm } from "./setup-claude-form";
+it("never prefills a secret, masks entry, clears after save, and tests only on explicit click", async () => {
+  const user = userEvent.setup(), save = vi.fn(async () => ({saved:true as const})), test = vi.fn(async () => ({test:"verified" as const}));
+  renderWithI18n(<SetupClaudeForm workspaceId="id" overview={{source:"key",model:"claude-opus-5-5",apiKeyEnv:null,available:true,needsSetup:false}} action={save} testAction={test} />, {locale:"en"});
+  const input = screen.getByLabelText("New API key / replacement");
+  expect(screen.getByRole("button",{name:"Test saved Claude credentials (read-only)"})).toHaveClass("whitespace-normal");
+  expect(input).toHaveAttribute("type","password"); expect(input).toHaveValue("");
+  await user.type(input,"synthetic-private");
+  expect(test).not.toHaveBeenCalled();
+  await user.click(screen.getByRole("button",{name:"Save settings"}));
+  await waitFor(() => expect(input).toHaveValue(""));
+  expect(screen.getByRole("status")).toHaveTextContent("Settings saved");
+  await user.click(screen.getByRole("button",{name:"Test saved Claude credentials (read-only)"}));
+  await waitFor(() => expect(test).toHaveBeenCalledTimes(1));
+  expect(screen.getByText(/Credential and model metadata access verified/)).toBeInTheDocument();
+  await user.type(input,"synthetic-rotation");
+  await user.click(screen.getByRole("button",{name:"Save settings"}));
+  await waitFor(() => expect(screen.queryByText(/Credential and model metadata access verified/)).not.toBeInTheDocument());
+  expect(test).toHaveBeenCalledTimes(1);
+});

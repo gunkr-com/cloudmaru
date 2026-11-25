@@ -1,0 +1,97 @@
+.viewport {
+  --first-column-width: clamp(7rem, 45cqi, 16rem);
+  container-type: inline-size;
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-hairline);
+  border-radius: 0.75rem;
+  scrollbar-color: var(--color-subtle) var(--color-surface-1);
+  scroll-padding-inline-start: var(--first-column-width);
+}
+
+.table {
+  min-width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--color-border-row);
+}
+
+.table th {
+  background: var(--color-surface-2);
+  color: var(--color-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.table td { background: var(--color-surface-1); }
+.table tbody tr:last-child td { border-bottom: 0; }
+.table tr > :first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  border-right: 1px solid var(--color-hairline);
+}
+.table thead tr > :first-child { z-index: 2; }
+.table td.detailsCell {
+  position: static;
+  padding: 0;
+  border-right: 0;
+  background: var(--color-canvas);
+}
+.details {
+  position: sticky;
+  left: 0;
+  width: 100cqi;
+  max-width: 100%;
+  padding: 1rem;
+  border-left: 2px solid var(--color-border-strong);
+}
+.table tbody tr:hover td,
+.table tbody tr:focus-within td { background: var(--color-surface-2); }
+.table td[data-kind="identifier"] { font-size: 0.8125rem; color: var(--color-muted); }
+.table td[data-kind="number"] { text-align: right; font-variant-numeric: tabular-nums; }
+.status {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 0.375rem;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.status[data-tone="violation"],
+.status[data-tone="blocked"],
+.status[data-tone="critical"],
+.status[data-tone="high"] { color: var(--color-warning); }
+.status[data-tone="unknown"] { color: var(--color-muted); border-style: dashed; }
+
+@media (max-width: 639px) {
+  .table th, .table td { padding: 0.75rem; }
+}
+
+
+.viewport[data-layout="billing"] {
+  --first-column-width: clamp(6rem, 40cqi, 16rem);
+}
+
+.viewport[data-layout="billing"] th[data-kind="number"] {
+  text-align: right;
+}
+
+@container (max-width: 32rem) {
+  .viewport[data-layout="billing"] .table :is(th, td) {
+    padding-inline: 0.625rem;
+  }
+}

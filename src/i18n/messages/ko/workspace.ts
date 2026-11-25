@@ -1,0 +1,45 @@
+import type { Messages } from "../types";
+export const workspace: Messages["workspace"] = {
+  "connection": "Azure 연결",
+  "connected": "연결됨 · 구독 {count}개",
+  "connectedOne": "연결됨 · 구독 {count}개",
+  "notConnected": "연결 안 됨",
+  "lastScan": "마지막 스캔",
+  "eyebrow": "워크스페이스",
+  "title": "워크스페이스",
+  "description": "회사마다 워크스페이스를 하나 만듭니다. 분석 기록은 워크스페이스별로 나뉩니다.",
+  "list": "워크스페이스 목록",
+  "name": "이름",
+  "requiredName": "이름 (필수)",
+  "companyName": "회사명",
+  "defaultRegion": "기본 지역",
+  "createdAt": "만든 날짜",
+  "manage": "관리",
+  "current": "현재",
+  "select": "선택",
+  "edit": "고치기",
+  "createTitle": "새 워크스페이스",
+  "create": "워크스페이스 만들기",
+  "save": "저장",
+  "saving": "저장 중입니다.",
+  "claude": {
+    "title": "Claude API 키",
+    "label": "API 키 환경 변수",
+    "help": ".env.local에 CLOUDSIGHT_CLAUDE_KEY_ACME 같은 이름으로 키를 설정하고, 여기에 변수 이름만 입력하세요. 비워 두면 AI를 끕니다. 값이 없으면 공통 키로 대체하지 않고 요청을 차단합니다.",
+    "configure": "Claude 키 설정",
+    "saved": "참조를 저장했습니다. API 요청은 하지 않았습니다.",
+    "invalidReference": "CLOUDSIGHT_CLAUDE_KEY_로 시작하는 환경 변수 이름을 입력하세요. 접두사 뒤는 영문 대문자로 시작하고 대문자·숫자·밑줄을 64자까지 쓸 수 있습니다. 비워 두면 AI를 끕니다.",
+    "saveFailed": "키 참조를 저장하지 못했습니다. 다시 시도해 주세요.",
+    "unavailable": "생성 전에 이 워크스페이스 전용 Claude 키를 로컬에 설정해 주세요. API 요청은 하지 않았습니다.",
+    "back": "워크스페이스로 돌아가기"
+  },
+  "errors": {
+    "save": "저장하지 못했습니다. 다시 시도해 주세요.",
+    "nameRequired": "워크스페이스 이름을 입력해 주세요.",
+    "nameTooLong": "워크스페이스 이름은 80자 이하로 입력해 주세요.",
+    "companyInvalid": "회사명을 문자열로 입력해 주세요.",
+    "companyTooLong": "회사명은 120자 이하로 입력해 주세요.",
+    "regionRequired": "지역을 선택해 주세요.",
+    "regionUnsupported": "지원하는 지역을 선택해 주세요."
+  }
+};

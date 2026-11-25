@@ -1,0 +1,707 @@
+{
+  "count": 61,
+  "data": [
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001",
+      "name": "Contoso Production (sample)",
+      "type": "microsoft.resources/subscriptions",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002",
+      "name": "Contoso Development (sample)",
+      "type": "microsoft.resources/subscriptions",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod",
+      "name": "rg-web-prod",
+      "type": "microsoft.resources/subscriptions/resourcegroups",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-data-prod",
+      "name": "rg-data-prod",
+      "type": "microsoft.resources/subscriptions/resourcegroups",
+      "location": "canadaeast",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev",
+      "name": "rg-dev",
+      "type": "microsoft.resources/subscriptions/resourcegroups",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-empty",
+      "name": "rg-empty",
+      "type": "microsoft.resources/subscriptions/resourcegroups",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Web/serverfarms/plan-web-prod",
+      "name": "plan-web-prod",
+      "type": "microsoft.web/serverfarms",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {},
+      "sku": {
+        "name": "P1v3",
+        "tier": "PremiumV3"
+      }
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Web/sites/app-portal",
+      "name": "app-portal",
+      "type": "microsoft.web/sites",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Web/sites/app-api",
+      "name": "app-api",
+      "type": "microsoft.web/sites",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Web/sites/app-admin",
+      "name": "app-admin",
+      "type": "microsoft.web/sites",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Sql/servers/sql-web-prod",
+      "name": "sql-web-prod",
+      "type": "microsoft.sql/servers",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Sql/servers/sql-web-prod/databases/sqldb-orders",
+      "name": "sqldb-orders",
+      "type": "microsoft.sql/servers/databases",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Sql/servers/sql-web-prod/databases/sqldb-users",
+      "name": "sqldb-users",
+      "type": "microsoft.sql/servers/databases",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Storage/storageAccounts/stwebprod01",
+      "name": "stwebprod01",
+      "type": "microsoft.storage/storageaccounts",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {},
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_ZRS"
+      }
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Storage/storageAccounts/stwebprod02",
+      "name": "stwebprod02",
+      "type": "microsoft.storage/storageaccounts",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {},
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_ZRS"
+      }
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.KeyVault/vaults/kv-web-prod",
+      "name": "kv-web-prod",
+      "type": "microsoft.keyvault/vaults",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.OperationalInsights/workspaces/log-web-prod",
+      "name": "log-web-prod",
+      "type": "microsoft.operationalinsights/workspaces",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/virtualNetworks/vnet-web-prod",
+      "name": "vnet-web-prod",
+      "type": "microsoft.network/virtualnetworks",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.20.0.0/16"
+          ]
+        },
+        "subnets": [
+          {
+            "name": "snet-app",
+            "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/virtualNetworks/vnet-web-prod/subnets/snet-app",
+            "properties": {
+              "addressPrefix": "10.20.1.0/24"
+            }
+          },
+          {
+            "name": "snet-data",
+            "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/virtualNetworks/vnet-web-prod/subnets/snet-data",
+            "properties": {
+              "addressPrefix": "10.20.2.0/24"
+            }
+          },
+          {
+            "name": "snet-vm",
+            "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/virtualNetworks/vnet-web-prod/subnets/snet-vm",
+            "properties": {
+              "addressPrefix": "10.20.3.0/24"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/networkSecurityGroups/nsg-vm",
+      "name": "nsg-vm",
+      "type": "microsoft.network/networksecuritygroups",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/networkInterfaces/nic-vm-jump-01",
+      "name": "nic-vm-jump-01",
+      "type": "microsoft.network/networkinterfaces",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Compute/virtualMachines/vm-jump-01",
+      "name": "vm-jump-01",
+      "type": "microsoft.compute/virtualmachines",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Compute/disks/disk-vm-jump-01-os",
+      "name": "disk-vm-jump-01-os",
+      "type": "microsoft.compute/disks",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Network/networkInterfaces/nic-vm-jump-02",
+      "name": "nic-vm-jump-02",
+      "type": "microsoft.network/networkinterfaces",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Compute/virtualMachines/vm-jump-02",
+      "name": "vm-jump-02",
+      "type": "microsoft.compute/virtualmachines",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-web-prod/providers/Microsoft.Compute/disks/disk-vm-jump-02-os",
+      "name": "disk-vm-jump-02-os",
+      "type": "microsoft.compute/disks",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-web-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-data-prod/providers/Microsoft.DocumentDB/databaseAccounts/cosmos-data-prod",
+      "name": "cosmos-data-prod",
+      "type": "microsoft.documentdb/databaseaccounts",
+      "location": "canadaeast",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-data-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-data-prod/providers/Microsoft.DataFactory/factories/adf-data-prod",
+      "name": "adf-data-prod",
+      "type": "microsoft.datafactory/factories",
+      "location": "canadaeast",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-data-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-data-prod/providers/Microsoft.Storage/storageAccounts/stdataprod01",
+      "name": "stdataprod01",
+      "type": "microsoft.storage/storageaccounts",
+      "location": "canadaeast",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "resourceGroup": "rg-data-prod",
+      "tags": {
+        "env": "prod",
+        "owner": "platform"
+      },
+      "properties": {},
+      "kind": "StorageV2"
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/serverfarms/plan-dev",
+      "name": "plan-dev",
+      "type": "microsoft.web/serverfarms",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-01",
+      "name": "app-dev-01",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-02",
+      "name": "app-dev-02",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-03",
+      "name": "app-dev-03",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-04",
+      "name": "app-dev-04",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-05",
+      "name": "app-dev-05",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-06",
+      "name": "app-dev-06",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-07",
+      "name": "app-dev-07",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-08",
+      "name": "app-dev-08",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-09",
+      "name": "app-dev-09",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-10",
+      "name": "app-dev-10",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-11",
+      "name": "app-dev-11",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-12",
+      "name": "app-dev-12",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-13",
+      "name": "app-dev-13",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-14",
+      "name": "app-dev-14",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-15",
+      "name": "app-dev-15",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-16",
+      "name": "app-dev-16",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-17",
+      "name": "app-dev-17",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-18",
+      "name": "app-dev-18",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-19",
+      "name": "app-dev-19",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-20",
+      "name": "app-dev-20",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-21",
+      "name": "app-dev-21",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-22",
+      "name": "app-dev-22",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-23",
+      "name": "app-dev-23",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-24",
+      "name": "app-dev-24",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-25",
+      "name": "app-dev-25",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-26",
+      "name": "app-dev-26",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-27",
+      "name": "app-dev-27",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-28",
+      "name": "app-dev-28",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-29",
+      "name": "app-dev-29",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-dev-30",
+      "name": "app-dev-30",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {},
+      "properties": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Cdn/profiles/afd-dev",
+      "name": "afd-dev",
+      "type": "microsoft.cdn/profiles",
+      "location": "global",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev",
+      "tags": {
+        "env": "dev"
+      },
+      "properties": {},
+      "sku": {
+        "name": "Standard_AzureFrontDoor"
+      }
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a002/resourceGroups/rg-dev/providers/Microsoft.Web/sites/app-broken",
+      "type": "microsoft.web/sites",
+      "location": "eastus2",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a002",
+      "resourceGroup": "rg-dev"
+    }
+  ],
+  "skip_token": null,
+  "total_records": 61
+}

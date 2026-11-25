@@ -1,0 +1,15 @@
+export const explorer = {
+  verdictColumn: "Verdict",
+  scrollHint: "Scroll horizontally to see all columns. The first column stays visible.",
+  search: "Search saved results", all: "All", missing: "Not observed", reset: "Reset filters", csv: "Export filtered CSV",
+  count: "{matched} of {total} saved rows", page: "Page {page} of {pages}", previous: "Previous results", next: "Next results",
+  empty: "No saved rows match these filters.", chartNotice: "All saved rows. Select a bar to filter the table. Counts describe observations, not a success rate.",
+  drill: "{label} · {count} / {total}", sort: "Sort by {column}", details: "Saved details", inventory: "Explore resources",
+  findings: "Explore checks", verdict: "Filter by verdict", group: "Resource group", region: "Region", type: "Type", name: "Name", resource: "Resource", rule: "Check", severity: "Severity", pillar: "Pillar",
+  unit: "Unit", components: "Explore components", quantity: "Quantity", option: "Option", comparison: "Option comparison", monthly: "Estimated monthly cost (CAD)", services: "Components", reference: "Reference architecture",
+  reuse: "Reuse / new / increased usage", reused: "Reused resources", newItems: "New components", increases: "Usage increases", kind: "Change type",
+  network: "Explore path observations", path: "Path", hop: "Hop", hopType: "Hop type", networkNotice: "Saved static observations only. Unknown is not an allowed path; original ordered evidence is below.",
+  actualCost: "Explore actual billing rows", amount: "Original amount", currency: "Currency", sign: "Charge / credit", positive: "Positive charges", negative: "Negative adjustments", zero: "Zero rows",
+  costDrill: "Show billing rows for {resource} · {currency} {amount}",
+  costNotice: "Original billing rows only. Bars use absolute magnitude within each currency and sign; currencies and positive/negative amounts are never combined. No time series is inferred.",
+} as const;

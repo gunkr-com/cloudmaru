@@ -1,0 +1,7 @@
+{
+  "description": "회원 1만 명 규모의 예약 웹 서비스입니다. Next.js 프런트와 Node API, PostgreSQL을 씁니다. 결제는 외부 PG를 사용합니다.",
+  "expectedUsers": "under-10k",
+  "monthlyBudget": 300,
+  "availability": "medium",
+  "region": "canadacentral"
+}

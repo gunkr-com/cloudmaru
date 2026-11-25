@@ -1,0 +1,17 @@
+import { explorer } from "./explorer";
+import { reports } from "./reports";
+import { common } from "./common";
+import { shell } from "./shell";
+import { workspace } from "./workspace";
+import { analysis } from "./analysis";
+import { artifacts } from "./artifacts";
+import { inventory } from "./inventory";
+import { assessment } from "./assessment";
+import { network } from "./network";
+import { extension } from "./extension";
+import { assessmentRoadmap } from "./assessmentRoadmap";
+import { extensionArtifacts } from "./extensionArtifacts";
+import { setup } from "./setup";
+import { overview } from "./overview";
+const pricing = { unavailable: "Build 또는 Extend를 실행하려면 npm run prices:sync로 로컬 Azure 가격을 동기화하세요. Docker에서는 호스트에서 명령을 실행하고 가격 파일이 있는 폴더를 마운트하세요.", syntheticDemo: "데모용 합성 가격" };
+export const ko = { pricing, setup, explorer, reports, common, shell, workspace, analysis, artifacts, inventory, assessment, network, extension, assessmentRoadmap, extensionArtifacts, overview };

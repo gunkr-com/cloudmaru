@@ -1,0 +1,959 @@
+{
+  "requestTitle": {
+    "en": "Reservation web service for 10,000 members",
+    "ko": "회원 1만 명 규모 예약 웹 서비스 구성 추천"
+  },
+  "input": {
+    "description": "회원 1만 명 규모의 예약 웹 서비스입니다. Next.js 프런트와 Node API, PostgreSQL을 씁니다. 결제는 외부 PG를 사용합니다.",
+    "expectedUsers": "under-10k",
+    "monthlyBudget": 300,
+    "availability": "medium",
+    "region": "canadacentral"
+  },
+  "outOfScope": false,
+  "recommendedTier": "balanced",
+  "recommendationReason": {
+    "en": "The Balanced option uses two container replicas to keep serving if one stops, and a B2s database to stay within the monthly budget of 300,000 won. The single database can still cause downtime during database or zone failures. The High availability option addresses this but exceeds the budget.",
+    "ko": "균형 안은 컨테이너 복제본 2개로 한쪽이 멈춰도 서비스를 이어가고, DB를 B2s로 조정해 월 예산 30만 원 안에 들어옵니다. 다만 DB가 하나라 DB 장애나 영역 장애 시에는 중단될 수 있으며, 이를 막으려면 예산을 넘는 고가용성 안이 필요합니다."
+  },
+  "priceAsOf": "2026-11-06",
+  "plans": [
+    {
+      "tier": "low",
+      "title": {
+        "en": "Start with App Service B1 and a small database",
+        "ko": "App Service B1과 소형 DB로 시작"
+      },
+      "recommended": false,
+      "referenceArchitecture": {
+        "id": "app-service-basic-web-app",
+        "name": {
+          "en": "Basic App Service web application",
+          "ko": "App Service 기본 웹 애플리케이션"
+        },
+        "sources": [
+          {
+            "title": "Azure Architecture Center · Basic web application",
+            "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/basic-web-app"
+          },
+          {
+            "title": "Azure Architecture Center · Baseline highly available zone-redundant web application",
+            "url": "https://learn.microsoft.com/azure/architecture/web-apps/app-service/architectures/baseline-zone-redundant"
+          },
+          {
+            "title": "Microsoft Learn · Deploy a Flask web app on Azure App Service with PostgreSQL",
+            "url": "https://learn.microsoft.com/en-us/azure/app-service/tutorial-python-postgresql-app-flask"
+          },
+          {
+            "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+            "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+          },
+          {
+            "title": "Microsoft Learn · Reliability in Azure App Service",
+            "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-app-service"
+          }
+        ]
+      },
+      "services": [
+        {
+          "componentId": "app-service-linux-b1",
+          "name": {
+            "en": "App Service B1 (Linux)",
+            "ko": "App Service B1 (Linux)"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "instance(s)",
+            "ko": "대"
+          }
+        },
+        {
+          "componentId": "postgres-flex-b1ms",
+          "name": {
+            "en": "PostgreSQL Flexible Server B1ms",
+            "ko": "PostgreSQL Flexible Server B1ms"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "instance(s)",
+            "ko": "대"
+          }
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "name": {
+            "en": "PostgreSQL Flexible Server storage",
+            "ko": "PostgreSQL Flexible Server 스토리지"
+          },
+          "quantity": 32,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "internet-egress",
+          "name": {
+            "en": "Internet data transfer out (Microsoft global network)",
+            "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+          },
+          "quantity": 100,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "name": {
+            "en": "Log Analytics ingestion (Analytics Logs)",
+            "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+          },
+          "quantity": 10,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        }
+      ],
+      "pros": [
+        {
+          "en": "Run the Next.js frontend and Node API on one B1 instance with a small PostgreSQL database to start at the lowest cost.",
+          "ko": "B1 1대에 Next.js 프런트와 Node API를 함께 올리고 작은 PostgreSQL로 비용을 가장 낮게 시작합니다."
+        },
+        {
+          "en": "App Service handles server maintenance, while Log Analytics collects logs for troubleshooting.",
+          "ko": "서버 관리는 App Service가 맡고 로그는 Log Analytics에 모아 문제를 확인할 수 있습니다."
+        },
+        {
+          "en": "With one app and one database, failures or deployments can cause downtime; this suits validation before launch.",
+          "ko": "앱과 DB가 하나씩이라 장애·배포 중 중단될 수 있어 출시 전 검증 단계에 적합합니다."
+        }
+      ],
+      "cost": {
+        "currency": "CAD",
+        "lines": [
+          {
+            "componentId": "app-service-linux-b1",
+            "name": {
+              "en": "App Service B1 (Linux)",
+              "ko": "App Service B1 (Linux)"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "instance(s)",
+              "ko": "대"
+            },
+            "isAssumption": false,
+            "amount": 18.47,
+            "assumptionLabel": null,
+            "hourly": true
+          },
+          {
+            "componentId": "postgres-flex-b1ms",
+            "name": {
+              "en": "PostgreSQL Flexible Server B1ms",
+              "ko": "PostgreSQL Flexible Server B1ms"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "instance(s)",
+              "ko": "대"
+            },
+            "isAssumption": false,
+            "amount": 18.98,
+            "assumptionLabel": null,
+            "hourly": true
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "name": {
+              "en": "PostgreSQL Flexible Server storage",
+              "ko": "PostgreSQL Flexible Server 스토리지"
+            },
+            "quantity": 32,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 5.68,
+            "assumptionLabel": {
+              "en": "{quantity} GB provisioned database storage per month",
+              "ko": "월 {quantity}GB DB 저장소 프로비저닝"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "internet-egress",
+            "name": {
+              "en": "Internet data transfer out (Microsoft global network)",
+              "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+            },
+            "quantity": 100,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 0,
+            "assumptionLabel": {
+              "en": "{quantity} GB internet transfer per month",
+              "ko": "월 {quantity}GB 인터넷 전송"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "name": {
+              "en": "Log Analytics ingestion (Analytics Logs)",
+              "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+            },
+            "quantity": 10,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 19.37,
+            "assumptionLabel": {
+              "en": "{quantity} GB log ingestion per month",
+              "ko": "월 {quantity}GB 로그 수집"
+            },
+            "hourly": false
+          }
+        ],
+        "total": 62.5,
+        "budgetRatio": 0.20833333333333334
+      },
+      "mermaid": {
+        "en": "flowchart LR\n  n0[\"App Service B1 (Linux)\"]\n  n1[\"PostgreSQL Flexible Server B1ms\"]\n  n2[\"PostgreSQL Flexible Server storage\"]\n  n3[\"Internet data transfer out (Microsoft global network)\"]\n  n4[\"Log Analytics ingestion (Analytics Logs)\"]\n  n5[\"Users\"]\n  n5 --> n0\n  n0 --> n1",
+        "ko": "flowchart LR\n  n0[\"App Service B1 (Linux)\"]\n  n1[\"PostgreSQL Flexible Server B1ms\"]\n  n2[\"PostgreSQL Flexible Server 스토리지\"]\n  n3[\"인터넷 데이터 송신 (Microsoft 글로벌 네트워크)\"]\n  n4[\"Log Analytics 로그 수집 (Analytics Logs)\"]\n  n5[\"사용자\"]\n  n5 --> n0\n  n0 --> n1"
+      },
+      "connections": [
+        {
+          "from": "user",
+          "to": "app-service-linux-b1"
+        },
+        {
+          "from": "app-service-linux-b1",
+          "to": "postgres-flex-b1ms"
+        }
+      ]
+    },
+    {
+      "tier": "balanced",
+      "title": {
+        "en": "Two container replicas with a B2s database",
+        "ko": "컨테이너 복제본 2개와 B2s DB 운영 구성"
+      },
+      "recommended": true,
+      "referenceArchitecture": {
+        "id": "container-apps-web-api",
+        "name": {
+          "en": "Container Apps web app and API",
+          "ko": "Container Apps 기반 웹앱·API"
+        },
+        "sources": [
+          {
+            "title": "Azure Architecture Center · Deploy microservices with Azure Container Apps and Dapr",
+            "url": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/serverless/microservices-with-container-apps-dapr"
+          },
+          {
+            "title": "Azure Well-Architected Framework · Architecture best practices for Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-container-apps"
+          },
+          {
+            "title": "Microsoft Learn · Reliability in Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-container-apps"
+          },
+          {
+            "title": "Microsoft Learn · Billing in Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+          },
+          {
+            "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+            "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+          }
+        ]
+      },
+      "services": [
+        {
+          "componentId": "container-apps-vcpu",
+          "name": {
+            "en": "Container Apps consumption vCPU (Linux)",
+            "ko": "Container Apps 소비형 vCPU (Linux)"
+          },
+          "quantity": 0.5,
+          "unitLabel": {
+            "en": "vCPU (always on)",
+            "ko": "상시 실행 vCPU"
+          }
+        },
+        {
+          "componentId": "container-apps-memory",
+          "name": {
+            "en": "Container Apps consumption memory (Linux)",
+            "ko": "Container Apps 소비형 메모리 (Linux)"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "GiB (always allocated)",
+            "ko": "상시 할당 GiB"
+          }
+        },
+        {
+          "componentId": "container-apps-requests",
+          "name": {
+            "en": "Container Apps consumption external HTTP requests",
+            "ko": "Container Apps 소비형 외부 HTTP 요청"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "million requests",
+            "ko": "백만 건"
+          }
+        },
+        {
+          "componentId": "postgres-flex-b2s",
+          "name": {
+            "en": "PostgreSQL Flexible Server B2s",
+            "ko": "PostgreSQL Flexible Server B2s"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "instance(s)",
+            "ko": "대"
+          }
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "name": {
+            "en": "PostgreSQL Flexible Server storage",
+            "ko": "PostgreSQL Flexible Server 스토리지"
+          },
+          "quantity": 32,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "blob-hot-lrs",
+          "name": {
+            "en": "Blob Storage Hot LRS storage",
+            "ko": "Blob Storage Hot LRS 저장 용량"
+          },
+          "quantity": 50,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "internet-egress",
+          "name": {
+            "en": "Internet data transfer out (Microsoft global network)",
+            "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+          },
+          "quantity": 100,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "name": {
+            "en": "Log Analytics ingestion (Analytics Logs)",
+            "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+          },
+          "quantity": 10,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "key-vault-operations",
+          "name": {
+            "en": "Key Vault Standard operations",
+            "ko": "Key Vault Standard 작업"
+          },
+          "quantity": 10,
+          "unitLabel": {
+            "en": "10,000 operations",
+            "ko": "만 건"
+          }
+        }
+      ],
+      "pros": [
+        {
+          "en": "Run Next.js and the Node API as containers with two replicas so bookings continue if one stops.",
+          "ko": "Next.js와 Node API를 컨테이너로 만들어 복제본 2개로 실행하므로 하나가 멈춰도 예약 접수가 이어집니다."
+        },
+        {
+          "en": "Gradually shift traffic to new versions to make booking feature updates safer.",
+          "ko": "새 버전에 요청을 조금씩 나눠 보내며 배포할 수 있어 예약 기능 업데이트가 안전합니다."
+        },
+        {
+          "en": "Use B2s instead of General Purpose to fit the budget, and store external payment provider keys in Key Vault.",
+          "ko": "DB를 범용 대신 B2s로 낮춰 예산 안에 맞추고, 외부 PG 연동 키는 Key Vault에 안전하게 보관합니다."
+        },
+        {
+          "en": "The single database can cause downtime if it fails, so verify backups.",
+          "ko": "DB는 한 대뿐이라 DB 장애 시에는 중단될 수 있으니 백업 확인이 필요합니다."
+        }
+      ],
+      "cost": {
+        "currency": "CAD",
+        "lines": [
+          {
+            "componentId": "container-apps-vcpu",
+            "name": {
+              "en": "Container Apps consumption vCPU (Linux)",
+              "ko": "Container Apps 소비형 vCPU (Linux)"
+            },
+            "quantity": 0.5,
+            "unitLabel": {
+              "en": "vCPU (always on)",
+              "ko": "상시 실행 vCPU"
+            },
+            "isAssumption": true,
+            "amount": 62.71,
+            "assumptionLabel": {
+              "en": "{quantity} vCPU active for 730 hours per month",
+              "ko": "월 730시간 vCPU {quantity}개 활성 실행"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "container-apps-memory",
+            "name": {
+              "en": "Container Apps consumption memory (Linux)",
+              "ko": "Container Apps 소비형 메모리 (Linux)"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "GiB (always allocated)",
+              "ko": "상시 할당 GiB"
+            },
+            "isAssumption": true,
+            "amount": 14.76,
+            "assumptionLabel": {
+              "en": "{quantity} GiB memory allocated for 730 hours per month",
+              "ko": "월 730시간 메모리 {quantity}GiB 할당"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "container-apps-requests",
+            "name": {
+              "en": "Container Apps consumption external HTTP requests",
+              "ko": "Container Apps 소비형 외부 HTTP 요청"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "million requests",
+              "ko": "백만 건"
+            },
+            "isAssumption": true,
+            "amount": 0.56,
+            "assumptionLabel": {
+              "en": "{quantity} million billable external HTTP requests per month (after the shared subscription free allowance)",
+              "ko": "월 {quantity}백만 건 과금 대상 외부 HTTP 요청 (구독 공유 무료량 차감 후)"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "postgres-flex-b2s",
+            "name": {
+              "en": "PostgreSQL Flexible Server B2s",
+              "ko": "PostgreSQL Flexible Server B2s"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "instance(s)",
+              "ko": "대"
+            },
+            "isAssumption": false,
+            "amount": 75.85,
+            "assumptionLabel": null,
+            "hourly": true
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "name": {
+              "en": "PostgreSQL Flexible Server storage",
+              "ko": "PostgreSQL Flexible Server 스토리지"
+            },
+            "quantity": 32,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 5.68,
+            "assumptionLabel": {
+              "en": "{quantity} GB provisioned database storage per month",
+              "ko": "월 {quantity}GB DB 저장소 프로비저닝"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "blob-hot-lrs",
+            "name": {
+              "en": "Blob Storage Hot LRS storage",
+              "ko": "Blob Storage Hot LRS 저장 용량"
+            },
+            "quantity": 50,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 1.41,
+            "assumptionLabel": {
+              "en": "{quantity} GB average Blob storage per month",
+              "ko": "월평균 {quantity}GB Blob 저장"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "internet-egress",
+            "name": {
+              "en": "Internet data transfer out (Microsoft global network)",
+              "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+            },
+            "quantity": 100,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 0,
+            "assumptionLabel": {
+              "en": "{quantity} GB internet transfer per month",
+              "ko": "월 {quantity}GB 인터넷 전송"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "name": {
+              "en": "Log Analytics ingestion (Analytics Logs)",
+              "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+            },
+            "quantity": 10,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 19.37,
+            "assumptionLabel": {
+              "en": "{quantity} GB log ingestion per month",
+              "ko": "월 {quantity}GB 로그 수집"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "key-vault-operations",
+            "name": {
+              "en": "Key Vault Standard operations",
+              "ko": "Key Vault Standard 작업"
+            },
+            "quantity": 10,
+            "unitLabel": {
+              "en": "10,000 operations",
+              "ko": "만 건"
+            },
+            "isAssumption": true,
+            "amount": 0.42,
+            "assumptionLabel": {
+              "en": "{quantity} × 10,000 secret and key operations per month",
+              "ko": "월 {quantity}만 건 비밀 값·키 작업"
+            },
+            "hourly": false
+          }
+        ],
+        "total": 180.76,
+        "budgetRatio": 0.6025333333333333
+      },
+      "mermaid": {
+        "en": "flowchart LR\n  n0[\"Container Apps consumption vCPU (Linux)\"]\n  n1[\"Container Apps consumption memory (Linux)\"]\n  n2[\"Container Apps consumption external HTTP requests\"]\n  n3[\"PostgreSQL Flexible Server B2s\"]\n  n4[\"PostgreSQL Flexible Server storage\"]\n  n5[\"Blob Storage Hot LRS storage\"]\n  n6[\"Internet data transfer out (Microsoft global network)\"]\n  n7[\"Log Analytics ingestion (Analytics Logs)\"]\n  n8[\"Key Vault Standard operations\"]\n  n9[\"Users\"]\n  n9 --> n0\n  n0 --> n3\n  n0 --> n5",
+        "ko": "flowchart LR\n  n0[\"Container Apps 소비형 vCPU (Linux)\"]\n  n1[\"Container Apps 소비형 메모리 (Linux)\"]\n  n2[\"Container Apps 소비형 외부 HTTP 요청\"]\n  n3[\"PostgreSQL Flexible Server B2s\"]\n  n4[\"PostgreSQL Flexible Server 스토리지\"]\n  n5[\"Blob Storage Hot LRS 저장 용량\"]\n  n6[\"인터넷 데이터 송신 (Microsoft 글로벌 네트워크)\"]\n  n7[\"Log Analytics 로그 수집 (Analytics Logs)\"]\n  n8[\"Key Vault Standard 작업\"]\n  n9[\"사용자\"]\n  n9 --> n0\n  n0 --> n3\n  n0 --> n5"
+      },
+      "connections": [
+        {
+          "from": "user",
+          "to": "container-apps-vcpu"
+        },
+        {
+          "from": "container-apps-vcpu",
+          "to": "postgres-flex-b2s"
+        },
+        {
+          "from": "container-apps-vcpu",
+          "to": "blob-hot-lrs"
+        }
+      ]
+    },
+    {
+      "tier": "ha",
+      "title": {
+        "en": "Three replicas with a zone-redundant database",
+        "ko": "복제본 3개와 영역 중복 DB 구성"
+      },
+      "recommended": false,
+      "referenceArchitecture": {
+        "id": "container-apps-web-api",
+        "name": {
+          "en": "Container Apps web app and API",
+          "ko": "Container Apps 기반 웹앱·API"
+        },
+        "sources": [
+          {
+            "title": "Azure Architecture Center · Deploy microservices with Azure Container Apps and Dapr",
+            "url": "https://learn.microsoft.com/en-us/azure/architecture/example-scenario/serverless/microservices-with-container-apps-dapr"
+          },
+          {
+            "title": "Azure Well-Architected Framework · Architecture best practices for Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-container-apps"
+          },
+          {
+            "title": "Microsoft Learn · Reliability in Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-container-apps"
+          },
+          {
+            "title": "Microsoft Learn · Billing in Azure Container Apps",
+            "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+          },
+          {
+            "title": "Microsoft Learn · High availability in Azure Database for PostgreSQL",
+            "url": "https://learn.microsoft.com/en-us/azure/postgresql/high-availability/concepts-high-availability"
+          }
+        ]
+      },
+      "services": [
+        {
+          "componentId": "container-apps-vcpu",
+          "name": {
+            "en": "Container Apps consumption vCPU (Linux)",
+            "ko": "Container Apps 소비형 vCPU (Linux)"
+          },
+          "quantity": 0.75,
+          "unitLabel": {
+            "en": "vCPU (always on)",
+            "ko": "상시 실행 vCPU"
+          }
+        },
+        {
+          "componentId": "container-apps-memory",
+          "name": {
+            "en": "Container Apps consumption memory (Linux)",
+            "ko": "Container Apps 소비형 메모리 (Linux)"
+          },
+          "quantity": 1.5,
+          "unitLabel": {
+            "en": "GiB (always allocated)",
+            "ko": "상시 할당 GiB"
+          }
+        },
+        {
+          "componentId": "container-apps-requests",
+          "name": {
+            "en": "Container Apps consumption external HTTP requests",
+            "ko": "Container Apps 소비형 외부 HTTP 요청"
+          },
+          "quantity": 1,
+          "unitLabel": {
+            "en": "million requests",
+            "ko": "백만 건"
+          }
+        },
+        {
+          "componentId": "postgres-flex-gp-2vcore",
+          "name": {
+            "en": "PostgreSQL Flexible Server General Purpose D2ds_v5 (2vCore)",
+            "ko": "PostgreSQL Flexible Server 범용 D2ds_v5 (2vCore)"
+          },
+          "quantity": 2,
+          "unitLabel": {
+            "en": "instance(s)",
+            "ko": "대"
+          }
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "name": {
+            "en": "PostgreSQL Flexible Server storage",
+            "ko": "PostgreSQL Flexible Server 스토리지"
+          },
+          "quantity": 64,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "blob-hot-zrs",
+          "name": {
+            "en": "Blob Storage Hot ZRS storage",
+            "ko": "Blob Storage Hot ZRS 저장 용량"
+          },
+          "quantity": 50,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "internet-egress",
+          "name": {
+            "en": "Internet data transfer out (Microsoft global network)",
+            "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+          },
+          "quantity": 100,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "name": {
+            "en": "Log Analytics ingestion (Analytics Logs)",
+            "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+          },
+          "quantity": 10,
+          "unitLabel": {
+            "en": "GB",
+            "ko": "GB"
+          }
+        },
+        {
+          "componentId": "key-vault-operations",
+          "name": {
+            "en": "Key Vault Standard operations",
+            "ko": "Key Vault Standard 작업"
+          },
+          "quantity": 10,
+          "unitLabel": {
+            "en": "10,000 operations",
+            "ko": "만 건"
+          }
+        }
+      ],
+      "pros": [
+        {
+          "en": "Spread three container replicas across availability zones to keep the service running if one datacenter stops.",
+          "ko": "컨테이너 복제본 3개를 서로 다른 가용 영역에 나눠 데이터센터 하나가 멈춰도 서비스를 유지합니다."
+        },
+        {
+          "en": "Place PostgreSQL primary and standby servers in different zones for automatic failover that protects booking data.",
+          "ko": "PostgreSQL 주·대기 서버를 다른 영역에 두어 DB 장애 시 자동 전환되어 예약 데이터를 보호합니다."
+        },
+        {
+          "en": "This far exceeds the monthly budget of 300,000 won; consider it when booking downtime directly affects revenue.",
+          "ko": "월 예산 30만 원을 크게 넘으므로 예약 중단이 매출에 직결될 때 고려하세요."
+        }
+      ],
+      "cost": {
+        "currency": "CAD",
+        "lines": [
+          {
+            "componentId": "container-apps-vcpu",
+            "name": {
+              "en": "Container Apps consumption vCPU (Linux)",
+              "ko": "Container Apps 소비형 vCPU (Linux)"
+            },
+            "quantity": 0.75,
+            "unitLabel": {
+              "en": "vCPU (always on)",
+              "ko": "상시 실행 vCPU"
+            },
+            "isAssumption": true,
+            "amount": 94.07,
+            "assumptionLabel": {
+              "en": "{quantity} vCPU active for 730 hours per month",
+              "ko": "월 730시간 vCPU {quantity}개 활성 실행"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "container-apps-memory",
+            "name": {
+              "en": "Container Apps consumption memory (Linux)",
+              "ko": "Container Apps 소비형 메모리 (Linux)"
+            },
+            "quantity": 1.5,
+            "unitLabel": {
+              "en": "GiB (always allocated)",
+              "ko": "상시 할당 GiB"
+            },
+            "isAssumption": true,
+            "amount": 22.13,
+            "assumptionLabel": {
+              "en": "{quantity} GiB memory allocated for 730 hours per month",
+              "ko": "월 730시간 메모리 {quantity}GiB 할당"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "container-apps-requests",
+            "name": {
+              "en": "Container Apps consumption external HTTP requests",
+              "ko": "Container Apps 소비형 외부 HTTP 요청"
+            },
+            "quantity": 1,
+            "unitLabel": {
+              "en": "million requests",
+              "ko": "백만 건"
+            },
+            "isAssumption": true,
+            "amount": 0.56,
+            "assumptionLabel": {
+              "en": "{quantity} million billable external HTTP requests per month (after the shared subscription free allowance)",
+              "ko": "월 {quantity}백만 건 과금 대상 외부 HTTP 요청 (구독 공유 무료량 차감 후)"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "postgres-flex-gp-2vcore",
+            "name": {
+              "en": "PostgreSQL Flexible Server General Purpose D2ds_v5 (2vCore)",
+              "ko": "PostgreSQL Flexible Server 범용 D2ds_v5 (2vCore)"
+            },
+            "quantity": 2,
+            "unitLabel": {
+              "en": "instance(s)",
+              "ko": "대"
+            },
+            "isAssumption": false,
+            "amount": 405.73,
+            "assumptionLabel": null,
+            "hourly": true
+          },
+          {
+            "componentId": "postgres-flex-storage",
+            "name": {
+              "en": "PostgreSQL Flexible Server storage",
+              "ko": "PostgreSQL Flexible Server 스토리지"
+            },
+            "quantity": 64,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 11.37,
+            "assumptionLabel": {
+              "en": "{quantity} GB provisioned database storage per month",
+              "ko": "월 {quantity}GB DB 저장소 프로비저닝"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "blob-hot-zrs",
+            "name": {
+              "en": "Blob Storage Hot ZRS storage",
+              "ko": "Blob Storage Hot ZRS 저장 용량"
+            },
+            "quantity": 50,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 1.76,
+            "assumptionLabel": {
+              "en": "{quantity} GB average Blob storage per month",
+              "ko": "월평균 {quantity}GB Blob 저장"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "internet-egress",
+            "name": {
+              "en": "Internet data transfer out (Microsoft global network)",
+              "ko": "인터넷 데이터 송신 (Microsoft 글로벌 네트워크)"
+            },
+            "quantity": 100,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 0,
+            "assumptionLabel": {
+              "en": "{quantity} GB internet transfer per month",
+              "ko": "월 {quantity}GB 인터넷 전송"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "log-analytics-ingestion",
+            "name": {
+              "en": "Log Analytics ingestion (Analytics Logs)",
+              "ko": "Log Analytics 로그 수집 (Analytics Logs)"
+            },
+            "quantity": 10,
+            "unitLabel": {
+              "en": "GB",
+              "ko": "GB"
+            },
+            "isAssumption": true,
+            "amount": 19.37,
+            "assumptionLabel": {
+              "en": "{quantity} GB log ingestion per month",
+              "ko": "월 {quantity}GB 로그 수집"
+            },
+            "hourly": false
+          },
+          {
+            "componentId": "key-vault-operations",
+            "name": {
+              "en": "Key Vault Standard operations",
+              "ko": "Key Vault Standard 작업"
+            },
+            "quantity": 10,
+            "unitLabel": {
+              "en": "10,000 operations",
+              "ko": "만 건"
+            },
+            "isAssumption": true,
+            "amount": 0.42,
+            "assumptionLabel": {
+              "en": "{quantity} × 10,000 secret and key operations per month",
+              "ko": "월 {quantity}만 건 비밀 값·키 작업"
+            },
+            "hourly": false
+          }
+        ],
+        "total": 555.41,
+        "budgetRatio": 1.8513666666666666
+      },
+      "mermaid": {
+        "en": "flowchart LR\n  n0[\"Container Apps consumption vCPU (Linux)\"]\n  n1[\"Container Apps consumption memory (Linux)\"]\n  n2[\"Container Apps consumption external HTTP requests\"]\n  n3[\"PostgreSQL Flexible Server General Purpose D2ds_v5 (2vCore)\"]\n  n4[\"PostgreSQL Flexible Server storage\"]\n  n5[\"Blob Storage Hot ZRS storage\"]\n  n6[\"Internet data transfer out (Microsoft global network)\"]\n  n7[\"Log Analytics ingestion (Analytics Logs)\"]\n  n8[\"Key Vault Standard operations\"]\n  n9[\"Users\"]\n  n9 --> n0\n  n0 --> n3\n  n0 --> n5",
+        "ko": "flowchart LR\n  n0[\"Container Apps 소비형 vCPU (Linux)\"]\n  n1[\"Container Apps 소비형 메모리 (Linux)\"]\n  n2[\"Container Apps 소비형 외부 HTTP 요청\"]\n  n3[\"PostgreSQL Flexible Server 범용 D2ds_v5 (2vCore)\"]\n  n4[\"PostgreSQL Flexible Server 스토리지\"]\n  n5[\"Blob Storage Hot ZRS 저장 용량\"]\n  n6[\"인터넷 데이터 송신 (Microsoft 글로벌 네트워크)\"]\n  n7[\"Log Analytics 로그 수집 (Analytics Logs)\"]\n  n8[\"Key Vault Standard 작업\"]\n  n9[\"사용자\"]\n  n9 --> n0\n  n0 --> n3\n  n0 --> n5"
+      },
+      "connections": [
+        {
+          "from": "user",
+          "to": "container-apps-vcpu"
+        },
+        {
+          "from": "container-apps-vcpu",
+          "to": "postgres-flex-gp-2vcore"
+        },
+        {
+          "from": "container-apps-vcpu",
+          "to": "blob-hot-zrs"
+        }
+      ]
+    }
+  ],
+  "region": "canadacentral",
+  "currency": "CAD"
+}

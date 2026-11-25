@@ -1,0 +1,15 @@
+export const explorer = {
+  verdictColumn: "판정",
+  scrollHint: "가로로 스크롤하면 모든 열을 볼 수 있습니다. 첫 열은 고정됩니다.",
+  search: "저장된 결과 검색", all: "전체", missing: "관측되지 않음", reset: "필터 초기화", csv: "필터 결과 CSV 내보내기",
+  count: "저장된 {total}행 중 {matched}행", page: "{pages}쪽 중 {page}쪽", previous: "이전 결과", next: "다음 결과",
+  empty: "이 필터에 맞는 저장된 행이 없습니다.", chartNotice: "저장된 전체 행입니다. 막대를 선택하면 표를 필터링합니다. 개수는 관측 결과이며 성공률이 아닙니다.",
+  drill: "{label} · {count} / {total}", sort: "{column} 정렬", details: "저장된 상세 정보", inventory: "리소스 탐색",
+  findings: "점검 탐색", verdict: "판정 필터", group: "리소스 그룹", region: "지역", type: "종류", name: "이름", resource: "리소스", rule: "점검", severity: "심각도", pillar: "평가 축",
+  unit: "단위", components: "구성요소 탐색", quantity: "수량", option: "구성안", comparison: "구성안 비교", monthly: "예상 월 비용 (CAD)", services: "구성요소", reference: "참조 아키텍처",
+  reuse: "재사용 / 신규 / 사용량 증가", reused: "재사용 리소스", newItems: "신규 구성요소", increases: "사용량 증가", kind: "변경 종류",
+  network: "경로 관측 결과 탐색", path: "경로", hop: "홉", hopType: "홉 종류", networkNotice: "저장된 정적 관측 결과입니다. 알 수 없음은 허용된 경로가 아닙니다. 원래 순서의 근거는 아래에 있습니다.",
+  actualCost: "실제 청구 행 탐색", amount: "원본 금액", currency: "통화", sign: "청구 / 조정", positive: "양수 청구", negative: "음수 조정", zero: "0원 행",
+  costDrill: "{resource} 청구 행 보기 · {currency} {amount}",
+  costNotice: "원본 청구 행만 표시합니다. 막대는 각 통화·부호 내 절댓값이며 통화나 양수·음수를 합치지 않습니다. 시계열을 추정하지 않습니다.",
+} as const;

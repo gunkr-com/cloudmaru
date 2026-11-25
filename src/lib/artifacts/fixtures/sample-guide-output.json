@@ -1,0 +1,162 @@
+{
+  "overview": {
+    "en": "Deploy the Balanced option’s web app, PostgreSQL and file storage in Canada Central, then connect logs and secrets to operational tools.",
+    "ko": "균형 안의 웹앱, PostgreSQL, 파일 저장소를 Canada Central에 배포하고 로그와 비밀 값을 운영 도구에 연결합니다."
+  },
+  "prerequisites": [
+    {
+      "en": "Prepare an Azure subscription and resource group.",
+      "ko": "Azure 구독과 리소스 그룹을 준비합니다."
+    },
+    {
+      "en": "Prepare application code and deployment permissions.",
+      "ko": "애플리케이션 코드와 배포 권한을 준비합니다."
+    }
+  ],
+  "steps": [
+    {
+      "title": {
+        "en": "Prepare the resource group",
+        "ko": "리소스 그룹 준비"
+      },
+      "goal": {
+        "en": "Manage related resources together.",
+        "ko": "관련 리소스를 한곳에서 관리합니다."
+      },
+      "instructions": [
+        {
+          "en": "Create a resource group in Canada Central using Azure Portal.",
+          "ko": "Azure Portal에서 Canada Central 리소스 그룹을 만듭니다."
+        }
+      ],
+      "componentIds": [],
+      "verification": {
+        "en": "Check that the resource group location is Canada Central.",
+        "ko": "리소스 그룹의 위치가 Canada Central인지 확인합니다."
+      }
+    },
+    {
+      "title": {
+        "en": "Deploy the App Service plan",
+        "ko": "앱 서비스 계획 배포"
+      },
+      "goal": {
+        "en": "Create a Linux plan to host the web app.",
+        "ko": "웹앱이 실행될 Linux 계획을 만듭니다."
+      },
+      "instructions": [
+        {
+          "en": "Create an App Service plan and select Linux and P0v3.",
+          "ko": "App Service 계획을 만들고 Linux와 P0v3를 선택합니다."
+        }
+      ],
+      "componentIds": [
+        "app-service-linux-p0v3"
+      ],
+      "verification": {
+        "en": "Check that the plan is running.",
+        "ko": "계획이 실행 중인지 확인합니다."
+      }
+    },
+    {
+      "title": {
+        "en": "Deploy the web app",
+        "ko": "웹앱 배포"
+      },
+      "goal": {
+        "en": "Serve the application over HTTPS.",
+        "ko": "애플리케이션을 HTTPS로 제공합니다."
+      },
+      "instructions": [
+        {
+          "en": "Create a Linux web app on the plan and configure deployment slots.",
+          "ko": "계획에 Linux 웹앱을 만들고 배포 슬롯을 구성합니다."
+        }
+      ],
+      "componentIds": [
+        "app-service-linux-p0v3"
+      ],
+      "verification": {
+        "en": "Check the app response on the default domain.",
+        "ko": "기본 도메인에서 앱 응답을 확인합니다."
+      }
+    },
+    {
+      "title": {
+        "en": "Configure the database",
+        "ko": "데이터베이스 구성"
+      },
+      "goal": {
+        "en": "Prepare a PostgreSQL server for the app.",
+        "ko": "앱이 사용할 PostgreSQL 서버를 준비합니다."
+      },
+      "instructions": [
+        {
+          "en": "Create a flexible server and configure its firewall and database.",
+          "ko": "유연한 서버를 만들고 방화벽과 데이터베이스를 구성합니다."
+        }
+      ],
+      "componentIds": [
+        "postgres-flex-b2s",
+        "postgres-flex-storage"
+      ],
+      "verification": {
+        "en": "Check database connectivity from the app network.",
+        "ko": "앱 네트워크에서 데이터베이스 연결을 확인합니다."
+      }
+    },
+    {
+      "title": {
+        "en": "Configure file storage",
+        "ko": "파일 저장소 구성"
+      },
+      "goal": {
+        "en": "Store reservation files in Blob storage.",
+        "ko": "예약 관련 파일을 Blob에 저장합니다."
+      },
+      "instructions": [
+        {
+          "en": "Create a storage account and a private Blob container.",
+          "ko": "저장소 계정과 비공개 Blob 컨테이너를 만듭니다."
+        }
+      ],
+      "componentIds": [
+        "blob-hot-lrs"
+      ],
+      "verification": {
+        "en": "Upload and read a test file.",
+        "ko": "테스트 파일을 업로드하고 읽습니다."
+      }
+    },
+    {
+      "title": {
+        "en": "Configure monitoring and secrets",
+        "ko": "관측과 비밀 관리"
+      },
+      "goal": {
+        "en": "Manage logs and application secrets safely.",
+        "ko": "로그와 애플리케이션 비밀을 안전하게 관리합니다."
+      },
+      "instructions": [
+        {
+          "en": "Connect Log Analytics and Application Insights, then configure Key Vault references.",
+          "ko": "Log Analytics와 Application Insights를 연결하고 Key Vault 참조를 설정합니다."
+        }
+      ],
+      "componentIds": [
+        "log-analytics-ingestion",
+        "key-vault-operations"
+      ],
+      "verification": {
+        "en": "Check request logs and Key Vault references.",
+        "ko": "요청 로그와 Key Vault 참조가 정상인지 확인합니다."
+      }
+    }
+  ],
+  "cautions": [
+    {
+      "en": "Allow only required networks through the database firewall.",
+      "ko": "데이터베이스 방화벽은 필요한 네트워크만 허용합니다."
+    }
+  ]
+}

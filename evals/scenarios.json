@@ -1,0 +1,201 @@
+[
+  {
+    "id": "reservation-web-app",
+    "title": "회원 1만 명 예약 웹 서비스",
+    "input": {
+      "description": "회원 1만 명 규모의 예약 웹 서비스입니다. Next.js 프런트와 Node API, PostgreSQL을 씁니다. 결제는 외부 PG를 사용합니다.",
+      "expectedUsers": "under-10k",
+      "monthlyBudget": 300,
+      "availability": "medium",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "Next.js 화면과 Node API, PostgreSQL을 운영할 수 있는지 확인한다. 외부 PG를 Azure 결제 구성요소로 바꾸지 않는지, 예약 데이터 보존과 동시 요청의 한계를 설명하는지 본다."
+    }
+  },
+  {
+    "id": "static-portfolio",
+    "title": "개인 포트폴리오와 정적 블로그",
+    "input": {
+      "description": "제 작업물을 보여 주는 포트폴리오와 블로그를 올리려고 합니다. 빌드된 HTML과 이미지 파일만 배포하고 로그인이나 데이터베이스는 필요 없습니다. 방문자는 하루 수십 명 정도입니다.",
+      "expectedUsers": "under-100",
+      "monthlyBudget": 30,
+      "availability": "low",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "정적 호스팅을 선택하고 불필요한 DB·API를 넣지 않는지 확인한다. 예산 판단은 serverless-static-web-app low에서 정적 호스팅 항목만 calculatePlanCost로 계산한 값에 근거한다. 무료 플랜의 용도·제약과 유료 안으로 올리는 이유도 확인한다."
+    }
+  },
+  {
+    "id": "internal-admin-tool",
+    "title": "직원 50명용 사내 관리 도구",
+    "input": {
+      "description": "직원 50명이 업무 시간에 사용하는 간단한 재고 관리 웹 화면을 만들었습니다. 입력한 재고와 변경 이력을 DB에 저장하고, 사내 계정으로 로그인해서 쓰려고 합니다. 야간에는 잠깐 중단돼도 괜찮습니다.",
+      "expectedUsers": "under-100",
+      "monthlyBudget": 100,
+      "availability": "low",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "단순 웹앱·DB 범위의 관리 도구로 다루는지 확인한다. 기업 전체 업무 시스템으로 확대하지 않고 작은 사용자 수에 맞는 구성과 인증·접근 통제의 필요성을 설명하는지 본다."
+    }
+  },
+  {
+    "id": "image-heavy-store",
+    "title": "상품 이미지가 많은 쇼핑몰",
+    "input": {
+      "description": "상품 이미지가 많은 쇼핑몰을 운영하려고 합니다. 상품과 주문은 DB에 저장하고 결제는 외부 PG에 맡기며, 이미지는 계속 늘어날 예정입니다. 행사 기간에도 고객이 상품을 보고 주문할 수 있어야 합니다.",
+      "expectedUsers": "under-100k",
+      "monthlyBudget": 1500,
+      "availability": "high",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database",
+        "storage"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "이미지 저장소와 전송량 가정이 빠지지 않는지, 앱·주문 DB의 중복 구성과 장애 전환을 설명하는지 확인한다. 외부 PG를 유지하고 사용자 수만으로 실제 처리량을 보장하지 않는지 본다."
+    }
+  },
+  {
+    "id": "mobile-rest-api",
+    "title": "모바일 앱 REST API 백엔드",
+    "input": {
+      "description": "모바일 앱에서 호출할 REST API 백엔드를 배포하려고 합니다. 사용자 프로필과 앱 데이터는 PostgreSQL에 저장하고, 웹 화면은 별도로 필요하지 않습니다. 처음에는 회원 1만 명 이하로 운영할 예정입니다.",
+      "expectedUsers": "under-10k",
+      "monthlyBudget": 500,
+      "availability": "medium",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "REST API에 맞는 컴퓨트와 PostgreSQL을 선택하고 정적 프런트 서비스를 불필요하게 넣지 않는지 확인한다. 연결 관리와 API 확장 시 DB 병목의 한계를 본다."
+    }
+  },
+  {
+    "id": "burst-event-api",
+    "title": "순간 트래픽이 몰리는 이벤트 API",
+    "input": {
+      "description": "티켓 오픈 시각에 요청이 한꺼번에 몰리는 이벤트 API를 운영하려고 합니다. 티켓 재고와 결제는 기존 외부 시스템이 처리하고 이 API는 요청 검증과 전달만 맡습니다. 평소에는 한산하지만 오픈 시간에는 중단되면 안 됩니다.",
+      "expectedUsers": "under-100k",
+      "monthlyBudget": 800,
+      "availability": "high",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "자동 확장과 최소 복제본, 콜드 스타트 및 급격한 부하 증가의 한계를 설명하는지 확인한다. 외부 시스템의 처리 한계와 부하 시험 필요성을 명시하고 최저 비용 안을 추천하지 않는지 본다."
+    }
+  },
+  {
+    "id": "b2b-saas-redis",
+    "title": "Redis를 사용하는 B2B SaaS 대시보드",
+    "input": {
+      "description": "기업 고객이 쓰는 SaaS 대시보드를 만들고 있습니다. 고객별 업무 데이터는 PostgreSQL에 저장하고 로그인 세션과 자주 조회하는 결과는 Redis에 보관합니다. 초기 사용자는 천 명 이하입니다.",
+      "expectedUsers": "under-1k",
+      "monthlyBudget": 400,
+      "availability": "medium",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database",
+        "cache"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "세 안 모두 PostgreSQL과 카탈로그의 Azure Managed Redis를 포함하는지 확인한다. 세션 소실 영향과 HA 노드 수량을 설명하는지 본다. 예산 판단에는 가장 싼 참조 low 비용에 Managed Redis B0 1노드 비용을 추가한다."
+    }
+  },
+  {
+    "id": "three-container-apis",
+    "title": "컨테이너 API 3개와 데이터베이스",
+    "input": {
+      "description": "서로 다른 API 서비스 3개를 각각 컨테이너 이미지로 배포하고 있습니다. 공용 PostgreSQL을 사용하며 API마다 따로 배포하고 확장할 수 있으면 좋겠습니다. 업무 중 장애가 나도 서비스가 계속 응답해야 합니다.",
+      "expectedUsers": "under-10k",
+      "monthlyBudget": 1000,
+      "availability": "high",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "컨테이너 서비스 3개의 CPU·메모리·요청량 및 복제본 수량을 합산했는지 확인한다. 서비스별 확장과 영역 장애 대응, 공유 PostgreSQL의 HA 비용을 설명하는지 본다."
+    }
+  },
+  {
+    "id": "shoestring-mvp",
+    "title": "월 CA$50 스타트업 MVP",
+    "input": {
+      "description": "고객 반응을 확인할 작은 MVP 웹앱을 빠르게 열고 싶습니다. 회원 가입과 게시글을 저장할 DB가 필요하지만 월 예산은 CA$50뿐입니다. 처음에는 사용자가 적고 잠깐의 중단은 감수할 수 있습니다.",
+      "expectedUsers": "under-1k",
+      "monthlyBudget": 50,
+      "availability": "low",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": false,
+      "requiredCategories": [
+        "compute",
+        "database"
+      ],
+      "lowTierWithinBudget": false,
+      "notes": "CA$50 예산의 제약과 사용량·기능 축소의 한계를 솔직하게 설명하는지 확인한다. 모델이 가격을 낮춰 쓰거나 DB를 빼서 예산을 맞추지 않는지 본다."
+    }
+  },
+  {
+    "id": "internal-llm-chatbot",
+    "title": "사내 문서 검색 LLM 챗봇",
+    "input": {
+      "description": "직원이 사내 문서를 검색하고 질문하면 LLM이 답하는 챗봇을 만들고 싶습니다. 문서를 업로드하면 검색용으로 처리하고 답변에 근거 문서도 보여 주면 좋겠습니다. 직원 천 명 이하가 웹 화면에서 사용할 예정입니다.",
+      "expectedUsers": "under-1k",
+      "monthlyBudget": 500,
+      "availability": "medium",
+      "region": "canadacentral"
+    },
+    "expect": {
+      "outOfScope": true,
+      "requiredCategories": [
+        "compute"
+      ],
+      "lowTierWithinBudget": true,
+      "notes": "LLM·검색 처리가 카탈로그 범위 밖임을 명시하고 가장 가까운 웹 구성만 제시하는지 확인한다. 카탈로그에 없는 AI 서비스나 URL을 만들지 않으며 표시 비용이 챗봇 전체 비용을 포함한다고 오해시키지 않는지 본다."
+    }
+  }
+]

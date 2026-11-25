@@ -1,0 +1,204 @@
+{
+  "requestTitle": {
+    "en": "Reservation web service",
+    "ko": "예약 웹 서비스"
+  },
+  "outOfScope": false,
+  "recommendedTier": "balanced",
+  "recommendationReason": {
+    "en": "The Balanced option provides deployment slots and autoscaling within budget. The app and database each have a single instance, so failures can cause downtime. Load testing is needed to check database performance during booking spikes.",
+    "ko": "균형 안은 예산 안에서 배포 슬롯과 자동 확장을 사용할 수 있습니다. 앱과 DB는 단일 구성이므로 장애 시 중단될 수 있고, 예약 요청이 몰릴 때의 DB 성능은 부하 시험으로 확인해야 합니다."
+  },
+  "plans": [
+    {
+      "tier": "low",
+      "referenceArchitectureId": "app-service-basic-web-app",
+      "title": {
+        "en": "Start reservations with a small app and database",
+        "ko": "작은 앱과 DB로 예약 서비스 시작"
+      },
+      "items": [
+        {
+          "componentId": "app-service-linux-b1",
+          "quantity": 1
+        },
+        {
+          "componentId": "postgres-flex-b1ms",
+          "quantity": 1
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "quantity": 32
+        },
+        {
+          "componentId": "internet-egress",
+          "quantity": 100
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "quantity": 10
+        }
+      ],
+      "pros": [
+        {
+          "en": "Deploy the frontend and API to App Service to reduce server maintenance.",
+          "ko": "App Service에 화면과 API를 배포해 서버 관리 부담을 줄입니다."
+        },
+        {
+          "en": "Start with a small PostgreSQL database and collect operational logs in one place.",
+          "ko": "작은 PostgreSQL DB로 시작하고 운영 로그를 한곳에 모읍니다."
+        }
+      ],
+      "connections": [
+        {
+          "from": "user",
+          "to": "app-service-linux-b1"
+        },
+        {
+          "from": "app-service-linux-b1",
+          "to": "postgres-flex-b1ms"
+        }
+      ]
+    },
+    {
+      "tier": "balanced",
+      "referenceArchitectureId": "app-service-basic-web-app",
+      "title": {
+        "en": "An operating setup that balances deployment needs and budget",
+        "ko": "배포 편의성과 예산을 고려한 운영 구성"
+      },
+      "items": [
+        {
+          "componentId": "app-service-linux-p0v3",
+          "quantity": 1
+        },
+        {
+          "componentId": "postgres-flex-b2s",
+          "quantity": 1
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "quantity": 32
+        },
+        {
+          "componentId": "blob-hot-lrs",
+          "quantity": 50
+        },
+        {
+          "componentId": "internet-egress",
+          "quantity": 100
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "quantity": 10
+        },
+        {
+          "componentId": "key-vault-operations",
+          "quantity": 10
+        }
+      ],
+      "pros": [
+        {
+          "en": "Test new versions in deployment slots before switching traffic and configure app autoscaling.",
+          "ko": "배포 슬롯에서 새 버전을 확인한 뒤 전환하고 앱 자동 확장을 설정할 수 있습니다."
+        },
+        {
+          "en": "Control initial costs with PostgreSQL B2s and store database connection secrets in Key Vault.",
+          "ko": "PostgreSQL B2s로 시작 비용을 조절하고 Key Vault에 DB 접속 비밀 값을 보관합니다."
+        },
+        {
+          "en": "Store booking files in Blob Storage and review operational logs in Log Analytics.",
+          "ko": "예약 관련 파일을 Blob Storage에 저장하고 Log Analytics로 운영 로그를 확인합니다."
+        }
+      ],
+      "connections": [
+        {
+          "from": "user",
+          "to": "app-service-linux-p0v3"
+        },
+        {
+          "from": "app-service-linux-p0v3",
+          "to": "postgres-flex-b2s"
+        },
+        {
+          "from": "app-service-linux-p0v3",
+          "to": "blob-hot-lrs"
+        },
+        {
+          "from": "app-service-linux-p0v3",
+          "to": "key-vault-operations"
+        }
+      ]
+    },
+    {
+      "tier": "ha",
+      "referenceArchitectureId": "app-service-basic-web-app",
+      "title": {
+        "en": "Zone redundancy for the app and reservation database",
+        "ko": "앱과 예약 DB를 영역별로 중복 구성"
+      },
+      "items": [
+        {
+          "componentId": "app-service-linux-p1v3",
+          "quantity": 2
+        },
+        {
+          "componentId": "postgres-flex-gp-2vcore",
+          "quantity": 2
+        },
+        {
+          "componentId": "postgres-flex-storage",
+          "quantity": 64
+        },
+        {
+          "componentId": "blob-hot-zrs",
+          "quantity": 50
+        },
+        {
+          "componentId": "internet-egress",
+          "quantity": 100
+        },
+        {
+          "componentId": "log-analytics-ingestion",
+          "quantity": 10
+        },
+        {
+          "componentId": "key-vault-operations",
+          "quantity": 10
+        }
+      ],
+      "pros": [
+        {
+          "en": "Enable zone redundancy for two app instances where supported to prepare for a single-zone failure.",
+          "ko": "지원되는 환경에서 앱 2대의 영역 중복을 켜 단일 영역 장애에 대비합니다."
+        },
+        {
+          "en": "Provision PostgreSQL primary and standby servers with their own storage to prepare for database failover.",
+          "ko": "PostgreSQL 주·대기 서버와 각각의 저장소를 확보해 DB 장애 전환을 준비합니다."
+        },
+        {
+          "en": "Use Blob ZRS to keep copies of booking files across availability zones.",
+          "ko": "Blob ZRS로 예약 관련 파일을 여러 가용성 영역에 중복 보관합니다."
+        }
+      ],
+      "connections": [
+        {
+          "from": "user",
+          "to": "app-service-linux-p1v3"
+        },
+        {
+          "from": "app-service-linux-p1v3",
+          "to": "postgres-flex-gp-2vcore"
+        },
+        {
+          "from": "app-service-linux-p1v3",
+          "to": "blob-hot-zrs"
+        },
+        {
+          "from": "app-service-linux-p1v3",
+          "to": "key-vault-operations"
+        }
+      ]
+    }
+  ]
+}

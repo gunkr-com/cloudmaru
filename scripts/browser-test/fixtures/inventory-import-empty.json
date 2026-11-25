@@ -1,0 +1,22 @@
+{
+  "count": 2,
+  "data": [
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001",
+      "name": "Contoso Production (sample)",
+      "type": "microsoft.resources/subscriptions",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "tags": {}
+    },
+    {
+      "id": "/subscriptions/00000000-0000-4000-8000-00000000a001/resourceGroups/rg-empty",
+      "name": "rg-empty",
+      "type": "microsoft.resources/subscriptions/resourcegroups",
+      "location": "canadacentral",
+      "subscriptionId": "00000000-0000-4000-8000-00000000a001",
+      "tags": {}
+    }
+  ],
+  "skip_token": null,
+  "total_records": 2
+}

@@ -1,0 +1,16 @@
+export const common = {
+  tiers: {"low": "Lowest cost", "balanced": "Balanced", "ha": "High availability"},
+  languages: { en: "EN", ko: "한국어" },
+  language: "Language",
+  siteName: "CloudMaru",
+  siteDescription: "Explore Azure web service options and estimated monthly costs for your requirements.",
+  loadError: "Could not load this page.",
+  loadErrorHelp: "Your input is saved in this browser. Try again in a moment.",
+  retry: "Retry",
+  newAnalysis: "New analysis",
+  analysisHistory: "Analysis history",
+  pageNotFound: "Page not found.",
+  pageNotFoundHelp: "This page may have moved or does not exist. Check the address or use the link below.",
+  analysisNotFound: "Analysis not found.",
+  analysisNotFoundHelp: "Check the address or open the analysis from your history.",
+} as const;

@@ -1,0 +1,17 @@
+import { explorer } from "./explorer";
+import { reports } from "./reports";
+import { common } from "./common";
+import { shell } from "./shell";
+import { workspace } from "./workspace";
+import { analysis } from "./analysis";
+import { artifacts } from "./artifacts";
+import { inventory } from "./inventory";
+import { assessment } from "./assessment";
+import { network } from "./network";
+import { extension } from "./extension";
+import { assessmentRoadmap } from "./assessmentRoadmap";
+import { extensionArtifacts } from "./extensionArtifacts";
+import { setup } from "./setup";
+import { overview } from "./overview";
+const pricing = { unavailable: "Sync local Azure prices with npm run prices:sync before running Build or Extend. For Docker, run the command on the host and mount the pricing directory.", syntheticDemo: "Synthetic demo prices" };
+export const en = { pricing, setup, explorer, reports, common, shell, workspace, analysis, artifacts, inventory, assessment, network, extension, assessmentRoadmap, extensionArtifacts, overview };

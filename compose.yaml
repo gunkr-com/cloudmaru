@@ -1,0 +1,40 @@
+# Linux Docker Engine. The application remains bound to host loopback.
+services:
+  cloudmaru:
+    build: .
+    image: cloudmaru:local
+    network_mode: host
+    environment:
+      PORT: ${CLOUDSIGHT_PORT:-3180}
+      CLOUDSIGHT_DATA_DIR: /var/lib/cloudsight/data
+      CLOUDSIGHT_SECRETS_DIR: /var/lib/cloudsight/secrets
+      CLOUDSIGHT_ALLOWED_HOSTS: ${CLOUDSIGHT_ALLOWED_HOSTS:-}
+      CLAUDE_MODEL: ${CLAUDE_MODEL:-claude-opus-5-5}
+    volumes:
+      - cloudsight-state:/var/lib/cloudsight
+      - type: bind
+        source: ${CLOUDSIGHT_CERTS_DIR:-./certificates}
+        target: /run/cloudsight-certificates
+        read_only: true
+      - type: bind
+        source: ./.cloudmaru-pricing
+        target: /app/.cloudmaru-pricing
+        read_only: true
+        bind:
+          create_host_path: false
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:'+process.env.PORT+'/workspaces').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      start_period: 45s
+      retries: 3
+volumes:
+  cloudsight-state:

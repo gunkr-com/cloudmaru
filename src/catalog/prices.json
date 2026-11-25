@@ -1,0 +1,1075 @@
+{
+  "asOf": "2026-01-15",
+  "currency": "CAD",
+  "regions": [
+    "canadacentral",
+    "westus2",
+    "centralus"
+  ],
+  "usdToCad": {
+    "rate": 1.25,
+    "pairs": 5
+  },
+  "prices": {
+    "app-service-linux-b1": {
+      "canadacentral": {
+        "meterId": "synthetic:app-service-linux-b1:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.08
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:app-service-linux-b1:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.1
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:app-service-linux-b1:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.12
+          }
+        ]
+      }
+    },
+    "app-service-linux-b2": {
+      "canadacentral": {
+        "meterId": "synthetic:app-service-linux-b2:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.16
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:app-service-linux-b2:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.2
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:app-service-linux-b2:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.24
+          }
+        ]
+      }
+    },
+    "app-service-linux-p0v3": {
+      "canadacentral": {
+        "meterId": "synthetic:app-service-linux-p0v3:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.12
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:app-service-linux-p0v3:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.15
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:app-service-linux-p0v3:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.18
+          }
+        ]
+      }
+    },
+    "app-service-linux-p1v3": {
+      "canadacentral": {
+        "meterId": "synthetic:app-service-linux-p1v3:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.24
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:app-service-linux-p1v3:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.3
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:app-service-linux-p1v3:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.36
+          }
+        ]
+      }
+    },
+    "app-service-linux-p2v3": {
+      "canadacentral": {
+        "meterId": "synthetic:app-service-linux-p2v3:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.48
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:app-service-linux-p2v3:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.6
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:app-service-linux-p2v3:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.72
+          }
+        ]
+      }
+    },
+    "container-apps-vcpu": {
+      "canadacentral": {
+        "meterId": "synthetic:container-apps-vcpu:canadacentral:1",
+        "unitOfMeasure": "1 Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 24000,
+            "unitPrice": 3e-05
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:container-apps-vcpu:westus2:1",
+        "unitOfMeasure": "1 Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 24000,
+            "unitPrice": 3.75e-05
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:container-apps-vcpu:centralus:1",
+        "unitOfMeasure": "1 Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 24000,
+            "unitPrice": 4.5e-05
+          }
+        ]
+      }
+    },
+    "container-apps-memory": {
+      "canadacentral": {
+        "meterId": "synthetic:container-apps-memory:canadacentral:1",
+        "unitOfMeasure": "1 GiB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 48000,
+            "unitPrice": 8e-06
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:container-apps-memory:westus2:1",
+        "unitOfMeasure": "1 GiB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 48000,
+            "unitPrice": 1e-05
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:container-apps-memory:centralus:1",
+        "unitOfMeasure": "1 GiB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 48000,
+            "unitPrice": 1.2e-05
+          }
+        ]
+      }
+    },
+    "functions-consumption-executions": {
+      "canadacentral": {
+        "meterId": "synthetic:functions-consumption-executions:canadacentral:1",
+        "unitOfMeasure": "10",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 15000,
+            "unitPrice": 3e-06
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:functions-consumption-executions:westus2:1",
+        "unitOfMeasure": "10",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 15000,
+            "unitPrice": 3.75e-06
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:functions-consumption-executions:centralus:1",
+        "unitOfMeasure": "10",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 15000,
+            "unitPrice": 4.5e-06
+          }
+        ]
+      }
+    },
+    "functions-consumption-duration": {
+      "canadacentral": {
+        "meterId": "synthetic:functions-consumption-duration:canadacentral:1",
+        "unitOfMeasure": "1 GB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 20000,
+            "unitPrice": 2e-05
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:functions-consumption-duration:westus2:1",
+        "unitOfMeasure": "1 GB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 20000,
+            "unitPrice": 2.5e-05
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:functions-consumption-duration:centralus:1",
+        "unitOfMeasure": "1 GB Second",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 20000,
+            "unitPrice": 3e-05
+          }
+        ]
+      }
+    },
+    "static-web-apps-standard": {
+      "canadacentral": {
+        "meterId": "synthetic:static-web-apps-standard:canadacentral:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 10
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:static-web-apps-standard:westus2:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 12.5
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:static-web-apps-standard:centralus:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 15.0
+          }
+        ]
+      }
+    },
+    "postgres-flex-b1ms": {
+      "canadacentral": {
+        "meterId": "synthetic:postgres-flex-b1ms:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.04
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:postgres-flex-b1ms:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.05
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:postgres-flex-b1ms:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.06
+          }
+        ]
+      }
+    },
+    "postgres-flex-b2s": {
+      "canadacentral": {
+        "meterId": "synthetic:postgres-flex-b2s:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.09
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:postgres-flex-b2s:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.1125
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:postgres-flex-b2s:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.135
+          }
+        ]
+      }
+    },
+    "postgres-flex-gp-2vcore": {
+      "canadacentral": {
+        "meterId": "synthetic:postgres-flex-gp-2vcore:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.32
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:postgres-flex-gp-2vcore:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.4
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:postgres-flex-gp-2vcore:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.48
+          }
+        ]
+      }
+    },
+    "postgres-flex-gp-4vcore": {
+      "canadacentral": {
+        "meterId": "synthetic:postgres-flex-gp-4vcore:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.64
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:postgres-flex-gp-4vcore:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.8
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:postgres-flex-gp-4vcore:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.96
+          }
+        ]
+      }
+    },
+    "postgres-flex-storage": {
+      "canadacentral": {
+        "meterId": "synthetic:postgres-flex-storage:canadacentral:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.2
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:postgres-flex-storage:westus2:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.25
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:postgres-flex-storage:centralus:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.3
+          }
+        ]
+      }
+    },
+    "cosmos-db-serverless-ru": {
+      "canadacentral": {
+        "meterId": "synthetic:cosmos-db-serverless-ru:canadacentral:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.18
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:cosmos-db-serverless-ru:westus2:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.225
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:cosmos-db-serverless-ru:centralus:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.27
+          }
+        ]
+      }
+    },
+    "blob-hot-lrs": {
+      "canadacentral": {
+        "meterId": "synthetic:blob-hot-lrs:canadacentral:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.025
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.02
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:blob-hot-lrs:westus2:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.03125
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.025
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:blob-hot-lrs:centralus:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.0375
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.03
+          }
+        ]
+      }
+    },
+    "blob-hot-zrs": {
+      "canadacentral": {
+        "meterId": "synthetic:blob-hot-zrs:canadacentral:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.04
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.032
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:blob-hot-zrs:westus2:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.05
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.04
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:blob-hot-zrs:centralus:1",
+        "unitOfMeasure": "1 GB/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.06
+          },
+          {
+            "minUnits": 1000,
+            "unitPrice": 0.048
+          }
+        ]
+      }
+    },
+    "managed-redis-b0": {
+      "canadacentral": {
+        "meterId": "synthetic:managed-redis-b0:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.1
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:managed-redis-b0:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.125
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:managed-redis-b0:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.15
+          }
+        ]
+      }
+    },
+    "managed-redis-b1": {
+      "canadacentral": {
+        "meterId": "synthetic:managed-redis-b1:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.2
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:managed-redis-b1:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.25
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:managed-redis-b1:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.3
+          }
+        ]
+      }
+    },
+    "front-door-standard-base": {
+      "canadacentral": {
+        "meterId": "synthetic:front-door-standard-base:canadacentral:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 40
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:front-door-standard-base:westus2:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 50.0
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:front-door-standard-base:centralus:1",
+        "unitOfMeasure": "1/Month",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 60.0
+          }
+        ]
+      }
+    },
+    "application-gateway-v2-fixed": {
+      "canadacentral": {
+        "meterId": "synthetic:application-gateway-v2-fixed:canadacentral:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.4
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:application-gateway-v2-fixed:westus2:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.5
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:application-gateway-v2-fixed:centralus:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.6
+          }
+        ]
+      }
+    },
+    "application-gateway-v2-capacity": {
+      "canadacentral": {
+        "meterId": "synthetic:application-gateway-v2-capacity:canadacentral:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.015
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:application-gateway-v2-capacity:westus2:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.01875
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:application-gateway-v2-capacity:centralus:1",
+        "unitOfMeasure": "1/Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.0225
+          }
+        ]
+      }
+    },
+    "internet-egress": {
+      "canadacentral": {
+        "meterId": "synthetic:internet-egress:canadacentral:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 25,
+            "unitPrice": 0.1
+          },
+          {
+            "minUnits": 200,
+            "unitPrice": 0.08
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:internet-egress:westus2:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 25,
+            "unitPrice": 0.125
+          },
+          {
+            "minUnits": 200,
+            "unitPrice": 0.1
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:internet-egress:centralus:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 25,
+            "unitPrice": 0.15
+          },
+          {
+            "minUnits": 200,
+            "unitPrice": 0.12
+          }
+        ]
+      }
+    },
+    "log-analytics-ingestion": {
+      "canadacentral": {
+        "meterId": "synthetic:log-analytics-ingestion:canadacentral:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 2,
+            "unitPrice": 2
+          },
+          {
+            "minUnits": 20,
+            "unitPrice": 1.6
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:log-analytics-ingestion:westus2:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 2,
+            "unitPrice": 2.5
+          },
+          {
+            "minUnits": 20,
+            "unitPrice": 2.0
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:log-analytics-ingestion:centralus:1",
+        "unitOfMeasure": "1 GB",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 2,
+            "unitPrice": 3.0
+          },
+          {
+            "minUnits": 20,
+            "unitPrice": 2.4
+          }
+        ]
+      }
+    },
+    "key-vault-operations": {
+      "canadacentral": {
+        "meterId": "synthetic:key-vault-operations:canadacentral:1",
+        "unitOfMeasure": "10K",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.15
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:key-vault-operations:westus2:1",
+        "unitOfMeasure": "10K",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.1875
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:key-vault-operations:centralus:1",
+        "unitOfMeasure": "10K",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.225
+          }
+        ]
+      }
+    },
+    "container-apps-requests": {
+      "canadacentral": {
+        "meterId": "synthetic:container-apps-requests:canadacentral:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 0.5,
+            "unitPrice": 0.5
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:container-apps-requests:westus2:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 0.5,
+            "unitPrice": 0.625
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:container-apps-requests:centralus:1",
+        "unitOfMeasure": "1M",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0
+          },
+          {
+            "minUnits": 0.5,
+            "unitPrice": 0.75
+          }
+        ]
+      }
+    },
+    "public-ipv4-standard": {
+      "canadacentral": {
+        "meterId": "synthetic:public-ipv4-standard:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.006
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:public-ipv4-standard:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.0075
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:public-ipv4-standard:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.009
+          }
+        ]
+      }
+    },
+    "functions-dedicated-p1v3": {
+      "canadacentral": {
+        "meterId": "synthetic:functions-dedicated-p1v3:canadacentral:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.26
+          }
+        ]
+      },
+      "westus2": {
+        "meterId": "synthetic:functions-dedicated-p1v3:westus2:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.325
+          }
+        ]
+      },
+      "centralus": {
+        "meterId": "synthetic:functions-dedicated-p1v3:centralus:1",
+        "unitOfMeasure": "1 Hour",
+        "tiers": [
+          {
+            "minUnits": 0,
+            "unitPrice": 0.39
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+export const assessmentRoadmap = {
+  "report": {
+    "title": "Assessment report",
+    "print": "Print / save PDF",
+    "back": "Open saved assessment",
+    "notice": "Saved results only. Downloading or printing does not rerun checks or call AI or Azure.",
+    "identity": "Saved assessment and owner",
+    "finding": "Finding",
+    "ruleId": "Rule ID / version",
+    "findingId": "Finding ID",
+    "resource": "Resource ID",
+    "mappingVersion": "Advisor mapping version",
+    "rulePack": "Rule pack version",
+    "periodFrom": "Requested period start",
+    "periodTo": "Requested period end",
+    "amount": "Original amount",
+    "total": "Currency total",
+    "subscription": "Subscription",
+    "attribution": "Attribution",
+    "ruleAction": "Catalog rule / action",
+    "reportUnavailable": "The saved report is unavailable. Open the assessment and check its historical evidence.",
+    "safeNotice": "Sensitive values are omitted. Observed text and AI explanations are displayed as inert text; links come only from the saved catalog.",
+    "roadmapCoverage": "Roadmap scope: {included} of {total} findings; {excluded} passing findings excluded. This is distinct from resource collection coverage.",
+    "counts": "Added {added} · no longer observed {removed} · changed {changed} · unknown {unknown}",
+    "credits": "Signed original amounts include credits and adjustments. Currency totals are separate; no conversion is applied.",
+    "assessmentCreated": "Assessment created",
+    "assessmentCompleted": "Assessment completed"
+},
+  "title": "Improvement roadmap",
+  "generate": "Generate roadmap",
+  "retry": "Retry roadmap",
+  "notice": "AI-organized priorities based on validated findings. Local verdicts are determined by code.",
+  "localPreserved": "Local check results remain available if roadmap generation fails.",
+  "download": "Download assessment report",
+  "status": {
+    "not-requested": "Not requested",
+    "pending": "Generating roadmap",
+    "succeeded": "Ready",
+    "failed": "Failed"
+  },
+  "ui": {
+    "keySettings": "Claude key settings",
+    "reload": "Reload status",
+    "pollError": "Could not read roadmap status. Reload status to try again.",
+    "coverage": "Findings included: {included} of {total}; {excluded} passing findings excluded.",
+    "elapsed": "Elapsed: {seconds}s",
+    "generatedAt": "Generated",
+    "findings": "Saved findings: {count}"
+},
+  "errors": {
+    "no-data": "No actionable code findings are available for a roadmap. Local results remain available.",
+    "workspace-changed": "The workspace has changed. Select this assessment's workspace before generating a roadmap.",
+    "invalid-body": "The request could not be read. Reload the page and try again.",
+    "unavailable": "Historical roadmap evidence is unavailable. Local results remain available.",
+    "assessment-missing": "The saved assessment could not be found. Open it again from the source scan.",
+    "assessment-not-succeeded": "Local checks have not completed successfully. Complete them before requesting a roadmap.",
+    "key-unavailable": "The workspace Claude key is unavailable. Check this assessment's workspace key settings.",
+    "validation-failed": "The roadmap did not pass validation. Try again.",
+    "timeout": "The roadmap did not finish in time. Try again.",
+    "interrupted": "Roadmap generation was interrupted. Try again.",
+    "internal": "Could not generate the roadmap. Local results are still available; try again."
+  }
+} as const;

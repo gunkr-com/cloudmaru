@@ -1,0 +1,1914 @@
+{
+  "schemaVersion": 1,
+  "version": "2026-11-12-v1",
+  "verifiedAt": "2026-11-12T07:08:27Z",
+  "regions": [
+    {
+      "id": "canadacentral",
+      "label": {
+        "en": "Canada Central",
+        "ko": "캐나다 중부"
+      }
+    },
+    {
+      "id": "westus2",
+      "label": {
+        "en": "West US 2",
+        "ko": "미국 서부 2"
+      }
+    },
+    {
+      "id": "centralus",
+      "label": {
+        "en": "Central US",
+        "ko": "미국 중부"
+      }
+    }
+  ],
+  "components": [
+    {
+      "componentId": "app-service-linux-b1",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "app-service-linux-b2",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "app-service-linux-p0v3",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "app-service-linux-p1v3",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "app-service-linux-p2v3",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "container-apps-vcpu",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "container-apps-memory",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "functions-consumption-executions",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "functions-consumption-duration",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Functions Consumption plan billing (legacy)",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-functions/consumption-plan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "static-web-apps-standard",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "unknown",
+          "priceRegion": "eastus2",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            },
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "unknown",
+          "priceRegion": "eastus2",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            },
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "unknown",
+          "priceRegion": "eastus2",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            },
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "static-web-apps-free",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "unknown",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "unknown",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "unknown",
+          "sources": [
+            {
+              "title": "Static Web Apps FAQ: global assets and managed Functions region",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/faq"
+            },
+            {
+              "title": "Static Web Apps Free and Standard plan quotas",
+              "url": "https://learn.microsoft.com/en-us/azure/static-web-apps/quotas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "postgres-flex-b1ms",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "postgres-flex-b2s",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "postgres-flex-gp-2vcore",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "postgres-flex-gp-4vcore",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "postgres-flex-storage",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "PostgreSQL Flexible Server service and compute tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/postgresql/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "cosmos-db-serverless-ru",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Cosmos DB serverless consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/serverless"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Cosmos DB serverless consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/serverless"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Cosmos DB serverless consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/cosmos-db/serverless"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "blob-hot-lrs",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "blob-hot-zrs",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Storage LRS and ZRS redundancy",
+              "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "managed-redis-b0",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "managed-redis-b1",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Managed Redis service tiers",
+              "url": "https://learn.microsoft.com/en-us/azure/redis/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "front-door-standard-base",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "Zone 1",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Front Door overview: global service and delivery charges",
+              "url": "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "Zone 1",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Front Door overview: global service and delivery charges",
+              "url": "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "Zone 1",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Front Door overview: global service and delivery charges",
+              "url": "https://learn.microsoft.com/en-us/azure/frontdoor/front-door-overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "application-gateway-v2-fixed",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "application-gateway-v2-capacity",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Application Gateway v2 fixed and capacity billing",
+              "url": "https://learn.microsoft.com/en-us/azure/application-gateway/understanding-pricing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "internet-egress",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "log-analytics-ingestion",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Monitor Logs: regional ingestion and retention charges",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs"
+            },
+            {
+              "title": "Application Insights pricing FAQ: monthly Log Analytics free allowance is per billing account",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/application-insights-faq"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Monitor Logs: regional ingestion and retention charges",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs"
+            },
+            {
+              "title": "Application Insights pricing FAQ: monthly Log Analytics free allowance is per billing account",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/application-insights-faq"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Azure Monitor Logs: regional ingestion and retention charges",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs"
+            },
+            {
+              "title": "Application Insights pricing FAQ: monthly Log Analytics free allowance is per billing account",
+              "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/application-insights-faq"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "key-vault-operations",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Key Vault overview: Standard operations and access boundaries",
+              "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Key Vault overview: Standard operations and access boundaries",
+              "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Key Vault overview: Standard operations and access boundaries",
+              "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "container-apps-requests",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Container Apps Consumption billing",
+              "url": "https://learn.microsoft.com/en-us/azure/container-apps/billing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "public-ipv4-standard",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Standard public IP addresses",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Standard public IP addresses",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "Standard public IP addresses",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "functions-dedicated-p1v3",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "priceRegion": "canadacentral",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "priceRegion": "westus2",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "priceRegion": "centralus",
+          "sources": [
+            {
+              "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+              "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+            },
+            {
+              "title": "App Service plans: operating system, region and shared compute billing",
+              "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            },
+            {
+              "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "virtual-network",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Virtual network ARM/Bicep resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Virtual network ARM/Bicep resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Virtual network ARM/Bicep resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "componentId": "virtual-network-subnet",
+      "regions": [
+        {
+          "regionId": "canadacentral",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Subnet ARM/Bicep child resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks/subnets"
+            },
+            {
+              "title": "Subnet delegation and service compatibility requirements",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview"
+            }
+          ]
+        },
+        {
+          "regionId": "westus2",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Subnet ARM/Bicep child resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks/subnets"
+            },
+            {
+              "title": "Subnet delegation and service compatibility requirements",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview"
+            }
+          ]
+        },
+        {
+          "regionId": "centralus",
+          "status": "supported",
+          "sources": [
+            {
+              "title": "Virtual Network overview: base resource pricing and regional subnets",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+            },
+            {
+              "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            },
+            {
+              "title": "Subnet ARM/Bicep child resource reference",
+              "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks/subnets"
+            },
+            {
+              "title": "Subnet delegation and service compatibility requirements",
+              "url": "https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reusePolicies": [
+    {
+      "id": "reuse-vnet",
+      "resourceTypes": [
+        "microsoft.network/virtualnetworks"
+      ],
+      "componentIds": [
+        "virtual-network"
+      ],
+      "conditions": [
+        "same-region"
+      ],
+      "additionalUsage": "none",
+      "capacity": "unverified",
+      "notes": {
+        "en": "Reference only an exact saved VNet in the selected region with known address prefixes. Check proposed subnet containment and all overlaps locally. Missing region/address evidence is unknown and not eligible. This neither establishes connectivity nor spare capacity; peering, transfer, egress and connected service charges remain separate.",
+        "ko": "선택 지역의 저장된 VNet을 정확히 참조하고 알려진 주소 대역을 사용한다. 신규 서브넷의 부모 포함과 모든 중첩을 로컬에서 검사한다. 지역·주소 근거가 없으면 알 수 없음으로 두고 재사용하지 않는다. 연결 가능성·여유 용량을 보장하지 않으며 피어링·전송·송신·연결 서비스 비용은 별도다."
+      },
+      "sources": [
+        {
+          "title": "Virtual Network overview: base resource pricing and regional subnets",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+        },
+        {
+          "title": "Virtual Network FAQ: regional scope and metered peering traffic",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+        },
+        {
+          "title": "Virtual network ARM/Bicep resource reference",
+          "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks"
+        }
+      ]
+    },
+    {
+      "id": "reuse-subnet",
+      "resourceTypes": [
+        "microsoft.network/virtualnetworks/subnets"
+      ],
+      "componentIds": [
+        "virtual-network-subnet"
+      ],
+      "conditions": [
+        "same-region",
+        "parent-inventory",
+        "delegation-verified"
+      ],
+      "additionalUsage": "none",
+      "capacity": "unverified",
+      "notes": {
+        "en": "Reference only a saved child subnet whose exact parent VNet is also in the scan. Require matching region, known address prefixes, parent containment, no conflicting ranges and explicit compatible delegation evidence. Missing requirements are unknown and not eligible. Do not change its delegation or properties. Address capacity and paths remain unverified; transfer and attached services are separately metered.",
+        "ko": "저장된 자식 서브넷과 같은 스캔의 정확한 부모 VNet만 참조한다. 동일 지역·알려진 주소 대역·부모 포함·대역 충돌 없음·명시적인 호환 위임 근거가 필요하다. 필수 근거가 없으면 알 수 없음으로 두고 재사용하지 않는다. 위임·속성을 변경하지 않는다. 주소 용량·경로는 미확인이며 전송·연결 서비스는 별도 과금이다."
+      },
+      "sources": [
+        {
+          "title": "Virtual Network overview: base resource pricing and regional subnets",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview"
+        },
+        {
+          "title": "Subnet ARM/Bicep child resource reference",
+          "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.network/virtualnetworks/subnets"
+        },
+        {
+          "title": "Subnet delegation and service compatibility requirements",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/subnet-delegation-overview"
+        }
+      ]
+    },
+    {
+      "id": "reuse-linux-app-service-plan",
+      "resourceTypes": [
+        "microsoft.web/serverfarms"
+      ],
+      "componentIds": [
+        "app-service-linux-b1",
+        "app-service-linux-b2",
+        "app-service-linux-p0v3",
+        "app-service-linux-p1v3",
+        "app-service-linux-p2v3"
+      ],
+      "conditions": [
+        "same-region",
+        "sku-match",
+        "linux-required"
+      ],
+      "additionalUsage": "none",
+      "capacity": "unverified",
+      "notes": {
+        "en": "Reference an exact saved App Service plan in the same region with properties.reserved explicitly true and sku.name exactly matching the mapped ARM SKU. Missing or contradictory Linux/SKU evidence is unknown and not eligible. Do not infer Linux from its name or treat Retail SKU display spacing as ARM sku.name. Do not resize or re-bill existing plan compute. Spare capacity remains unverified; incremental logs, Key Vault operations and other metered services must still be charged.",
+        "ko": "같은 지역의 정확한 저장 App Service 플랜에서 properties.reserved가 명시적으로 true이고 sku.name이 매핑된 ARM SKU와 정확히 일치해야 한다. Linux·SKU 근거가 누락되거나 모순되면 알 수 없음으로 두고 재사용하지 않는다. 이름으로 Linux를 추정하거나 소매 SKU 표시명의 공백을 ARM sku.name으로 쓰지 않는다. 플랜 크기를 변경하거나 기존 컴퓨트 비용을 다시 청구하지 않는다. 여유 용량은 미확인이며 증가 로그·Key Vault 작업 등은 계속 별도 과금한다."
+      },
+      "sources": [
+        {
+          "title": "App Service plans: operating system, region and shared compute billing",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        },
+        {
+          "title": "App Service plan ARM/Bicep reference: reserved Linux flag and SKU",
+          "url": "https://learn.microsoft.com/en-us/azure/templates/microsoft.web/serverfarms"
+        },
+        {
+          "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+          "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+        }
+      ],
+      "skuByComponent": {
+        "app-service-linux-b1": "B1",
+        "app-service-linux-b2": "B2",
+        "app-service-linux-p0v3": "P0v3",
+        "app-service-linux-p1v3": "P1v3",
+        "app-service-linux-p2v3": "P2v3"
+      }
+    },
+    {
+      "id": "reuse-key-vault",
+      "resourceTypes": [
+        "microsoft.keyvault/vaults"
+      ],
+      "componentIds": [
+        "key-vault-operations"
+      ],
+      "conditions": [
+        "same-region"
+      ],
+      "additionalUsage": "metered",
+      "capacity": "unverified",
+      "notes": {
+        "en": "Reference only an exact saved vault in the same region under the conservative v1 policy. Never read or transmit secret values, redefine the vault or change access settings. Keep increased Standard operations as separately metered usage in the incremental estimate; reuse never makes operations free. Missing region or resource evidence is not eligible. Capacity and access remain unverified.",
+        "ko": "보수적인 v1 정책에 따라 같은 지역의 정확한 저장 Key Vault만 참조한다. 비밀 값을 읽거나 전송하지 않고 vault 재정의·접근 설정 변경도 하지 않는다. 증가한 Standard 작업은 추가 견적의 별도 과금 사용량으로 유지하며 재사용으로 무료가 되지 않는다. 지역·리소스 근거가 없으면 재사용하지 않는다. 용량·접근 권한은 미확인이다."
+      },
+      "sources": [
+        {
+          "title": "Key Vault overview: Standard operations and access boundaries",
+          "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/overview"
+        },
+        {
+          "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+          "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+        }
+      ]
+    },
+    {
+      "id": "reuse-log-analytics",
+      "resourceTypes": [
+        "microsoft.operationalinsights/workspaces"
+      ],
+      "componentIds": [
+        "log-analytics-ingestion"
+      ],
+      "conditions": [
+        "same-region"
+      ],
+      "additionalUsage": "metered",
+      "capacity": "unverified",
+      "notes": {
+        "en": "Reference only an exact saved Log Analytics workspace in the same supported region with a compatible Analytics Logs usage component. Keep additional ingested GB as metered usage in the incremental estimate even when the workspace already exists. Never infer unused ingestion capacity or a free allowance for the new workload; review workspace billing, retention and Sentinel settings separately. Missing requirements are not eligible. Capacity remains unverified.",
+        "ko": "지원되는 동일 지역의 정확한 저장 Log Analytics 작업 영역을 호환되는 Analytics Logs 사용량 구성요소로만 참조한다. 기존 작업 영역이어도 증가 수집량 GB를 추가 견적의 과금 사용량으로 유지한다. 새 워크로드의 여유 수집 용량·무료 허용량을 추정하지 않고 작업 영역의 청구·보존·Sentinel 설정을 별도로 검토한다. 필수 근거가 없으면 재사용하지 않는다. 용량은 미확인이다."
+      },
+      "sources": [
+        {
+          "title": "Azure Monitor Logs: regional ingestion and retention charges",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/cost-logs"
+        },
+        {
+          "title": "Azure Retail Prices API: regional SKU and meter basis for local sync",
+          "url": "https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices"
+        },
+        {
+          "title": "Application Insights pricing FAQ: monthly Log Analytics free allowance is per billing account",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/application-insights-faq"
+        }
+      ]
+    }
+  ]
+}

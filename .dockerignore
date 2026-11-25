@@ -1,0 +1,19 @@
+**
+!package.json
+!package-lock.json
+!next.config.ts
+!tsconfig.json
+!postcss.config.mjs
+!next-env.d.ts
+!src/
+!src/**
+!db/
+!db/migrations/
+!db/migrations/**
+# Build-stage notice collector only; tests and other scripts stay out of the context.
+!scripts/collect-image-notices.ts
+!Dockerfile
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+
+/.cloudmaru-pricing/

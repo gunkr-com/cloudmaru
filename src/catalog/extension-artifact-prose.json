@@ -1,0 +1,157 @@
+{
+  "version": "extend-artifact-prose-v1",
+  "titles": [
+    {
+      "id": "review-configuration",
+      "en": "Review configuration",
+      "ko": "구성 검토"
+    },
+    {
+      "id": "review-access",
+      "en": "Review access",
+      "ko": "접근 검토"
+    },
+    {
+      "id": "preserve-resources",
+      "en": "Preserve existing settings",
+      "ko": "기존 설정 유지"
+    },
+    {
+      "id": "review-dependencies",
+      "en": "Review integration configuration",
+      "ko": "연결 구성 검토"
+    },
+    {
+      "id": "prepare-integration",
+      "en": "Prepare integration",
+      "ko": "연결 준비"
+    },
+    {
+      "id": "verify-integration",
+      "en": "Verify integration",
+      "ko": "연결 검증"
+    },
+    {
+      "id": "review-recovery",
+      "en": "Review recovery",
+      "ko": "복구 검토"
+    },
+    {
+      "id": "review-monitoring",
+      "en": "Review monitoring",
+      "ko": "모니터링 검토"
+    },
+    {
+      "id": "review-usage",
+      "en": "Review usage",
+      "ko": "사용량 검토"
+    },
+    {
+      "id": "review-limitations",
+      "en": "Review limitations",
+      "ko": "제약 검토"
+    }
+  ],
+  "statements": [
+    {
+      "id": "review-saved",
+      "en": "Review the saved configuration before integration.",
+      "ko": "연결 전에 저장된 구성을 검토합니다."
+    },
+    {
+      "id": "check-access",
+      "en": "Check access permissions before starting.",
+      "ko": "시작 전에 접근 권한을 확인합니다."
+    },
+    {
+      "id": "capacity-unknown",
+      "en": "Capacity and connectivity remain unverified.",
+      "ko": "용량과 연결 가능 여부는 확인되지 않았습니다."
+    },
+    {
+      "id": "preserve-settings",
+      "en": "Preserve existing settings.",
+      "ko": "기존 설정을 유지합니다."
+    },
+    {
+      "id": "verify-isolated",
+      "en": "Verify the integration in an isolated environment.",
+      "ko": "격리된 환경에서 연결 결과를 확인합니다."
+    },
+    {
+      "id": "review-scope",
+      "en": "Review collection coverage before integration.",
+      "ko": "연결 전에 수집 범위를 검토합니다."
+    },
+    {
+      "id": "review-dependencies",
+      "en": "Review integration requirements and resource configuration.",
+      "ko": "연결 요구사항과 리소스 구성을 검토합니다."
+    },
+    {
+      "id": "review-authentication",
+      "en": "Review authentication and access permissions before integration.",
+      "ko": "연결 전에 인증과 접근 권한을 확인합니다."
+    },
+    {
+      "id": "record-results",
+      "en": "Record the results and investigate failures.",
+      "ko": "결과를 기록하고 실패 원인을 조사합니다."
+    },
+    {
+      "id": "bounded-retries",
+      "en": "Use bounded delays and retries for transient errors.",
+      "ko": "일시적 오류에 제한된 지연과 재시도를 사용합니다."
+    },
+    {
+      "id": "test-recovery",
+      "en": "Test recovery in an isolated environment.",
+      "ko": "격리된 환경에서 복구를 테스트합니다."
+    },
+    {
+      "id": "review-usage",
+      "en": "Review usage assumptions and monitor resource utilization.",
+      "ko": "사용량 가정을 검토하고 리소스 사용량을 관찰합니다."
+    },
+    {
+      "id": "review-storage",
+      "en": "Review storage retention and recovery procedures.",
+      "ko": "저장소 보존과 복구 절차를 검토합니다."
+    },
+    {
+      "id": "secure-parameters",
+      "en": "Use secure parameters for credentials.",
+      "ko": "자격증명에 안전한 매개변수를 사용합니다."
+    },
+    {
+      "id": "separate-roles",
+      "en": "Separate access roles and review audit logs.",
+      "ko": "접근 역할을 분리하고 감사 로그를 검토합니다."
+    },
+    {
+      "id": "review-logs",
+      "en": "Review monitoring configuration and record observations.",
+      "ko": "모니터링 구성을 검토하고 관측 결과를 기록합니다."
+    },
+    {
+      "id": "review-demand",
+      "en": "Compare observed demand with resource capacity before integration.",
+      "ko": "연결 전에 관측 수요와 리소스 용량을 비교합니다."
+    },
+    {
+      "id": "review-path",
+      "en": "Review network paths and access restrictions before integration.",
+      "ko": "연결 전에 네트워크 경로와 접근 제약을 검토합니다."
+    },
+    {
+      "id": "review-backup",
+      "en": "Review backup and restore procedures before release.",
+      "ko": "릴리스 전에 백업과 복원 절차를 검토합니다."
+    },
+    {
+      "id": "review-constraints",
+      "en": "Review the saved limitations before proceeding.",
+      "ko": "진행 전에 저장된 제약을 확인합니다."
+    }
+  ]
+}
