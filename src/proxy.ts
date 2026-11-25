@@ -15,6 +15,9 @@ export function proxy(request: NextRequest): NextResponse {
   if (!decision.ok) {
     return new NextResponse(null, { status: decision.status, headers: { "Cache-Control": "no-store" } });
   }
+  if (process.env.NODE_ENV === "production" && /^\/analyses\/preview(?:\/form)?\/?$/.test(request.nextUrl.pathname)) {
+    return new NextResponse(null, { status: 404, headers: { "Cache-Control": "no-store" } });
+  }
   return NextResponse.next();
 }
 

@@ -13,6 +13,28 @@ function request(path = "/api/analyses", headers: Record<string, string> = {}, m
 afterEach(() => vi.unstubAllEnvs());
 
 describe("proxy", () => {
+  it.each([
+    "/analyses/preview",
+    "/analyses/preview?scenario=sample",
+    "/analyses/preview/form",
+    "/analyses/preview/form/",
+  ])("returns an uncached 404 for developer previews in production: %s", (path) => {
+    vi.stubEnv("NODE_ENV", "production");
+    const result = proxy(request(path, {}, "GET"));
+    expect(result.status).toBe(404);
+    expect(result.headers.get("Cache-Control")).toBe("no-store");
+  });
+
+  it.each(["/analyses/preview", "/analyses/preview/form"])("keeps developer previews available in development: %s", (path) => {
+    vi.stubEnv("NODE_ENV", "development");
+    expect(proxy(request(path, {}, "GET")).headers.get("x-middleware-next")).toBe("1");
+  });
+
+  it("still rejects disallowed hosts on production preview paths", () => {
+    vi.stubEnv("NODE_ENV", "production");
+    expect(proxy(request("/analyses/preview", { host: "evil.test" }, "GET")).status).toBe(403);
+  });
+
   it.each(["/analyses/new", "/api/analyses", "/workspaces"])("passes local requests without session checks: %s", async (path) => {
     const result = await proxy(request(path));
     expect(result.headers.get("x-middleware-next")).toBe("1");
